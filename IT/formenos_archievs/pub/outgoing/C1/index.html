@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>C</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+<a href="..">..</a>
+<!--a href="g2.c" target="_blank">g2.c</a> - число разложений числа на слагаемые (задача с распределительного контеста)
+<a href="compl_mul.c" target="_blank">compl_mul.c</a> - умножение комплексных чисел (на магию спецификаторов)
+<a href="pseudo_pascal" target="_blank"><b>pseudo_pascal/</b></a> - <b>ПсевдоПаскаль</b> - Си, замаскированный под Паскаль:
+    <a href="pseudo_pascal/pascal.h" target="_blank">pascal.h</a> и
+    <a href="pseudo_pascal/pascapital.h" target="_blank">pascapital.h</a> - " <tt>#define Pascal C</tt> " и
+    <a href="pseudo_pascal/g2.c" target="_blank">g2.c</a> - пример их использования - уже известная нам задача <a href="g2.c" target="_blank">g2.c</a-->
+<a href="nod_rec.c" target="_blank">nod_rec.c</a> - Алгоритм Евклида - рекурсивный вариант
+<a href="viete.c" target="_blank">viete.c</a> - составить квадратный трёхчлен по данным корням, используя теорему Виета (на магию спецификаторов)
+<a href="medians_v1.c" target="_blank">medians_v1.c</a> - медианы треугольника - для случая, если введённые координаты являются дробными (проходит в контесте)
+<a href="medians_v2.c" target="_blank">medians_v2.c</a> - медианы треугольника - для целых координат (не проходит в контесте)
+<a href="viete0.c" target="_blank">viete0.c</a> - составить квадратное уравнение по данным корням, используя теорему Виета - упражнение на тернарную операцию " ? : "
+<a href="factors.c" target="_blank">factors.c</a> - пример факторизации (разложения на простые множители) чисел
+<a href="divisors_list.c" target="_blank">divisors_list.c</a> - все делители числа за O(#n)
+<a href="reverse_decimal.c" target="_blank">reverse_decimal.c</a> - число задом наперёд
+<a href="Euclid.c" target="_blank">Euclid.c</a> - Алгоритм Евклида - два варианта, через вычитание и через остаток от деления
+<a href="Eratosthenes.c" target="_blank">Eratosthenes.c</a> - Решето Эратосфена
+<a href="div3_1.c" target="_blank">div3_1.c</a> - делимость огромного, длинного числа на 3, ввод через строку-массив
+<a href="div3_2.c" target="_blank">div3_2.c</a> - делимость огромного, длинного числа на 3, ввод посимвольно
+<a href="matrixes.c" target="_blank">matrixes.c</a> - умножение матриц (на двумерные статические массивы)
+<a href="text_capitalize.c" target="_blank">text_capitalize.c</a> - капитализация текста (каждое слово с большой буквы; слова разделяются не только пробелами, но и любыми символами "небуквами")
+<a href="symbols.c" target="_blank">symbols.c</a> - поиск количества разных букв в тексте (через массив флажков)
+<a href="exp.c" target="_blank">exp.c</a> - разложение функции e<sup>x</sup> в ряд Тейлора
+<a href="func_fib1.c" target="_blank">func_fib1.c</a> - числа Фибоначчи, итерационный вариант
+<a href="func_fib2.c" target="_blank">func_fib2.c</a> - числа Фибоначчи, рекурсивный вариант
+<a href="generate_binary_words_v1.c" target="_blank">generate_binary_words_v1.c</a> - генерация бинарных слов (хороший пример, когда использовать рекурсию оправданно)
+<a href="Cnk.c" target="_blank">Cnk.c</a> - число сочетаний Cnk (на динамику) - решается методом заполнения треугольника Паскаля
+<a href="edyn_1.c" target="_blank">edyn_1.c</a> - число способов пройти из одного угла прямоугольного поля в противоположный (на динамику) - здесь мы идём из нижнего правого угла в верхний левый
+<a href="cables.c" target="_blank">cables.c</a> - Провода (на целочисленный бинарный поиск)
+<a href="pointers" target="_blank"><b>pointers/</b></a> - <b>Указатели</b>:
+    <a href="pointers/swaps.c" target="_blank">swaps.c</a> - реализация функции <tt>swap()</tt> на Си
+    <a href="pointers/div_mod.c" target="_blank">div_mod.c</a> - деление с остатком - ещё один пример, когда результат из функции возвращается не через возвращаемое значение, а через параметры с помощью указателей
+    <a href="pointers/ptrs.c" target="_blank">ptrs.c</a> - упражнения на адресную арифметику
+    <a href="pointers/dynarr2.c" target="_blank">dynarr2.c</a> - двумерный динамический массив на Си
+    <a href="pointers/dynarr2.cpp" target="_blank">dynarr2.cpp</a> - двумерный динамический массив на C++
+    <a href="pointers/strs.c" target="_blank">strs.c</a> - упражнения на строки, реализация некоторых стандартных библиотечных функций
+    <a href="pointers/q_sort.c" target="_blank">q_sort.c</a> - сортировка банального целочисленного массива с помощью штатной функции <tt><b>qsort</b>()</tt>
+    <a href="pointers/structs.c" target="_blank">structs.c</a> - "записная книжка" - пример описания структуры, заведения массива структур и сортировки его по какому-либо полю
+    <a href="pointers/listeners.c" target="_blank">listeners.c</a> - пример использования конструкции "массив из n указателей на функции, которые что-то принимают в параметрах и что-то возвращают"
+<a href="qsort_points_v1.c" target="_blank">qsort_points_v1.c</a> - сортировка массива структур (точек с целыми координатами x и y) с помощью <tt><b>qsort</b>()</tt>
+<a href="qsort_points_v2.c" target="_blank">qsort_points_v2.c</a> - то же самое, только квадрат радиус-вектора сохраняется в структуру, чтобы не считать многократно одно и то же
+<a href="files.c" target="_blank">files.c</a> - пример работы с файлами
+<a href="qsortfile.c" target="_blank">qsortfile.c</a> - сортировка файла - с помощью динамического двумерного массива <tt>char</tt>'ов ("массива указателей" на массивы-строки различной длины)
+<a href="qsortfile0.c" target="_blank">qsortfile0.c</a> - сортировка файла - с помощью выделения памяти целиком сразу под весь массив строк ("указатель на массивы"), а также <tt>qsort</tt> без отдельной функции сравнения
+<a href="sort" target="_blank"><b>sort/</b></a> - <b>Сортировки</b>:
+    <a href="sort/selection.c" target="_blank">selection.c</a> - выбором, O(n<sup>2</sup>)
+    <a href="sort/bubble.c" target="_blank">bubble.c</a> - Пузырьком, O(n<sup>2</sup>)
+    <a href="sort/bubble2.c" target="_blank">bubble2.c</a> - усовершенствованным Пузырьком, O(n<sup>2</sup>) в худшем случае
+    <a href="sort/insertion.c" target="_blank">insertion.c</a> - вставками, O(n<sup>2</sup>)
+    <a href="sort/quicksort.c" target="_blank">quicksort.c</a> - быстрая сортировка Хо(а)ра, O(n*log(n)) в среднем (но O(n<sup>2</sup>) в самом худшем случае)
+    <a href="sort/merge.c" target="_blank">merge.c</a> - слиянием, O(n*log(n)), но требует доп.памяти для массивов (для списков не требует)
+    <a href="sort/sorts.c" target="_blank">sorts.c</a> - все эти сортировки в одном модуле
+<a href="structures" target="_blank"><b>structures/</b></a> - <b>Структуры данных</b>:
+    <a href="structures/list_demo.c" target="_blank">list_demo.c</a> - реализация односвязного списка с демонстрационным примером
+    <a href="structures/list_footer.c" target="_blank">list_footer.c</a> - системная часть кода (функция <tt>main</tt>), находящаяся в EJudge, которая прикрепляется к вашей посылке в задаче list; удобно для отладки
+    <a href="structures/liststd.cpp" target="_blank">liststd.cpp</a> - пример работы со стандартными списками C++ библиотеки STL с помощью <b>итераторов</b>
+    <a href="structures/treesort_win.c" target="_blank">treesort_win.c</a> (для Windows) и
+    <a href="structures/treesort_lin.c" target="_blank">treesort_lin.c</a> (для Linux) - сортировка дерева файлов и папок по уменьшению размера
+    <a href="structures/tree2search" target="_blank"><b>tree2search/</b></a> - <b>Бинарное дерево поиска</b> (пример многомодульной программы)
+        <a href="structures/tree2search/tree2search.c" target="_blank">tree2search.c</a> - главный модуль - реализация бинарного дерева поиска
+        <a href="structures/tree2search/list.c" target="_blank">list.c</a> - односвязный список, который просто переименовывается в стек и очередь
+        <a href="structures/tree2search/list.h" target="_blank">list.h</a> - общие декларации для списка, использующиеся во всех трёх модулях
+        <a href="structures/tree2search/addon.c" target="_blank">addon.c</a> - модуль с дополнительными и вспомогательными функциями
+        <a href="structures/tree2search/tree2search.sln" target="_blank">tree2search.sln</a>, <a href="structures/tree2search/tree2search.vcproj" target="_blank">tree2search.vcproj</a> - настройки проекта для M$ Visual C++ 2008
+        <a href="structures/tree2search/tree2search.pro" target="_blank">tree2search.pro</a> - для QtCreator, <a href="structures/tree2search/tree2search.cbp" target="_blank">tree2search.cbp</a> - для Code::Blocks
+        <a href="structures/tree2search/.project" target="_blank">.project</a>, <a href="structures/tree2search/.cproject" target="_blank">.cproject</a> - для Eclipse
+    <a href="structures/tree.c" target="_blank">tree.c</a> - обычное дерево (не бинарное и не поиска) в общем виде
+    <a href="structures/read_tree.c" target="_blank">read_tree.c</a> - чтение обычного дерева со входа, парсинг и воссоздание в памяти (обратная рекурсия)
+    <a href="structures/read_tree2.c" target="_blank">read_tree2.c</a> - чтение бинарного дерева со входа, парсинг и воссоздание в памяти (обратная рекурсия)
+<a href="flist_lin.c" target="_blank">flist_lin.c</a> - нерекурсивный перебор всех файлов и папок в данной директории в Linux,
+<a href="flist_win.c" target="_blank">flist_win.c</a> - то же самое, но в Windows
+<a href="calc0.c" target="_blank">calc0.c</a> - рекурсивная реализация простейшего Калькулятора (без скобок)
+<a href="strstr.c" target="_blank">strstr.c</a> - простейшая реализация библиотечной функции <tt><b>strstr</b>()</tt>
+<a href="sumN.c" target="_blank">sumN.c</a> - функция с переменным числом параметров, считающая сумму N чисел - с помощью указателей и адресной арифметики (только для 32 бит)
+<a href="sumN_va.c" target="_blank">sumN_va.c</a> - то же самое, но с помощью магии <tt>va</tt>-макросов (универсально)
+<a href="notepad.c" target="_blank">notepad.c</a> - консольный блокнот (read-only)
+</div>
+<div id="comments"></div>
+<script src="/.comments.js"></script>
+</body>
+</html>

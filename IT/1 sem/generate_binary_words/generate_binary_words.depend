@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1539585565 source:c:\users\sony\desktop\Информатика\generate_binary_words\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1565466409 source:c:\users\sony\desktop\Информатика\1 семестр\generate_binary_words\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1565467458 source:c:\users\sony\desktop\it\1 sem\generate_binary_words\main.c
+	<stdio.h>
+	<stdlib.h>
+

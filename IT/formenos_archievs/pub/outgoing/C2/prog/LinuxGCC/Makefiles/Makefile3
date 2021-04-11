@@ -1,0 +1,8 @@
+prog: prog.o unit.o
+	gcc $^ -o $@
+
+%.o: %.c header.h
+	gcc -c $<
+
+clean:
+	rm -f *.o prog

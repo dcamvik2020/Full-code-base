@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1565469318 source:c:\users\sony\desktop\Информатика\1 семестр\argv\main.c
+	<stdio.h>
+	<stdlib.h>
+

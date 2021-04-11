@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Компиляторы</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+<a href="../Compilers" target="_blank">Компиляторы C/C++</a>.
+<ol>
+<li><a href="../Compilers/QtCreator" target="_blank">QtCreator</a> - та среда, которую я рекомендую и которую мы попробуем в следующий раз. Для Windows устанавливается просто - архив распаковывается в корень диска C:\
+Проверьте, что распаковали правильно, полный путь к бинарнику должен быть ровно таким:
+<tt>C:\Qt\Tools\QtCreator\bin\qtcreator.exe</tt>
+и лишних папок на пути быть не должно.
+Версия старенькая, 2014 года, но зато проверенная и рабочая.
+Кого не устраивает, или кто хочет установить в другое место, скачивайте самостоятельно с <a href="https://www.qt.io/download-open-source/" target="_blank">сайта</a> (хотя сейчас, вроде, начали требовать зарегистрироваться; кроме того, потом надо будет в установленной программе кое-что изменить, чтобы отключить зависимость от всяких .dll). <a href="../Compilers/QtCreator/Readme_win.html" target="_blank">Инструкция</a> по установке находится в той же папке.
+Также в этой инструкции также кратенько написано, как скомпилировать и пошагово выполнить программу. Кто любит бежать впереди паровоза, может попробовать.
+QtCreator - это всего лишь оболочка, она использует компилятор GCC (в Linux), либо его порт под Windows - MinGW, либо компилятор от M$ Visual Studio - что найдёт.
+</li>
+<li><a href="../Compilers/Eclipse" target="_blank">Eclipse</a> - ещё одна IDE, поддерживающая компилятор GCC/MinGW и Visual Studio. Довольно старая версия, давно не обновлялась, но зато с интегрированным плагином для SVN (а для Windows ещё и с Java-машиной и компилятором - всё-в-одном).
+Установка проще некуда - распаковать архивчик можно в любое место, главное, чтобы только полный путь к программам НЕ содержал русских букв и пробелов. <a href="../Compilers/Eclipse/Readme.html" target="_blank">Инструкция</a> прилагается.
+Если не нравится, качайте <a href="http://www.eclipse.org/downloads/packages/release/photon/r/eclipse-ide-cc-developers" target="_blank">новую версию</a>.
+</li>
+<li><a href="../Compilers/codeblocks-13.12mingw-setup.exe" target="_blank">Code::Blocks</a> - ещё одна среда для GCC/MinGW. Менее навороченная и менее требовательная.
+Скачано <a href="http://www.codeblocks.org/downloads/26" target="_blank">отсюда</a>.
+</li>
+<li><a href="../Compilers/Visual Studio Express 2008" target="_blank">M$ Visual Studio Express</a> - рекомендуется версия 2008, т.к. она есть в аудиториях в WinXP, она менее прожорливая, в ней меньше всяких тяжёлых излишеств.
+А в более новых версиях работа с консольными приложениями становится всё неудобнее и неудобнее. Для некоммерческого использования Express-версия бесплатная.
+См. <a href="../Compilers/Visual Studio Express 2008/Readme.html" target="_blank">инструкцию</a> по установке и работе. Достоинства - более-менее адекватный отладчик.
+Если хочется Professional-версию, регистрируйтесь в <a href="https://mipt.ru/it/services/poluchenie-litsenzionnogo-po/poluchenie-litsenzionnogo-po" target="_blank">MSDN AA</a>, там можно скачать любую версию Windows, Visual Studio и других продуктов, кроме Office - абсолютно легально, бесплатно и нахаляву!
+</li>
+</ol>
+</div>
+<div id="comments"></div>
+<script src="comments.js"></script>
+</body>
+</html>

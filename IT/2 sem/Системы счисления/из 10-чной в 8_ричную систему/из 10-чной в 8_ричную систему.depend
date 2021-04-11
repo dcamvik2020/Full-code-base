@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1551860364 source:c:\users\sony\desktop\Информатика\2 семестр\Системы счисления\из 10-чной в 8_ричную систему\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Урок 4: Add bin unit</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+Подключить бинарный модуль к своему проекту в <a href="../C2/brute0/MinGW/brute0.pro" target="_blank">QtCreator</a>/<a href="../C2/brute0/MinGW/.project" target="_blank">Eclipse</a>/<a href="../C2/brute0/MinGW/brute0.cbp" target="_blank">Code::Blocks</a>/<a href="../C2/brute0/MSVC/brute0.vcproj" target="_blank">VisualStudio</a> можно следующим образом:
+(в примерах исходный модуль используется <tt>brute.c</tt>, а бинарный <tt>passwd.o(bj)</tt>, хотя имена могут быть любые)
+<ul>
+<li><a href="../C2/brute0/MinGW/brute0.pro" target="_blank"><b>Qt Creator</b></a>:
+<ol>
+<li>Создать простой проект на C без использования библиотек Qt.
+</li>
+<li>Положить <tt>passwd.o</tt> в папку со своим проектом рядом с <tt>main.c</tt>.
+</li>
+<li>В файле настроек проекта проект.pro добавить следующую строчку:
+<tt>OBJECTS += passwd.o</tt>
+</li>
+<li>Вернуться в Qt Creator, скомпилировать и запустить, как обычно.
+</li></ol></li>
+<li><a href="../C2/brute0/MinGW/.project" target="_blank"><b>Eclipse</b></a>:
+<ol>
+<li>Создать обычный C-проект с исходным файлом, например, <tt>brute.c</tt>.
+</li>
+<li>Положить <tt>passwd.o</tt> в папку со своим проектом рядом с <tt>brute.c</tt>.
+</li>
+<li>Вернуться в Eclipse, выбрать слева в окне <i>Project Explorer</i> свой проект, обновить его (нажать F5).
+</li>
+<li>
+<ol>
+<li>Выбрать пункт главного меню <i>Project -&gt; Properties</i>,
+</li>
+<li>в появившемся диалоге слева выбрать пункт <i>C/C++ Build -&gt; Settings</i>,
+</li>
+<li>в середине на вкладке <i>Tool Settings</i> выбрать пункт <i>MinGW C Linker -&gt; Miscellaneous</i>,
+</li>
+<li>справа внизу в окне <i>Other objects</i> нажать кнопку <i>Add...</i> (зелёненький +) и прописать путь к данному бинарному модулю, например, <tt>src\passwd.o</tt>
+</li></ol></li>
+<li><i>Apply</i>, <i>OK</i>, дальше работаем, как обычно, компилируем, запускаем.
+</li></ol></li>
+<li><a href="../C2/brute0/MinGW/brute0.cbp" target="_blank"><b>Code::Blocks</b></a>:
+<ol>
+<li>Создать обычный C-проект.
+</li>
+<li>Положить <tt>passwd.o</tt> в папку с проектом, т.е. рядом с <tt>.c</tt>-файлом.
+</li>
+<li>
+<ol>
+<li>Затем пункт меню <i>Project -&gt; Build options...</i>
+</li>
+<li>в открывшемся диалоге перейти на закладку <i>Linker settings</i>,
+</li>
+<li>в окне <i>Other linker options</i> написать <tt>passwd.o</tt>
+</li></ol></li>
+<li>Всё. <i>ОК</i>, <i>Compile</i>, <i>Run</i>.
+</li></ol></li>
+<li><a href="../C2/brute0/MSVC/brute0.vcproj" target="_blank"><b>M$ Visual C++</b></a>:
+Как добавить бинарный объектный файл к своему проекту (без Makefile, с помощью среды разработки Visual Studio):
+<ol>
+<li>Создаём обычный проект Си с одним <tt><i>исходным файлом</i>.c</tt>, который пишете вы.
+</li>
+<li>Кладём файл <tt>passwd.obj</tt> в папку с проектом, рядом с вашим <tt><i>исходником</i>.c</tt>.
+</li>
+<li>
+<ol>
+<li>Пункт меню <i>Project -&gt; &lt;проект&gt; Properties...</i>,
+</li>
+<li>в открывшемся диалоге слева выбираем пункт <i>Configuration Properties -&gt; Linker -&gt; Input</i>,
+</li>
+<li>а справа в поле <i>Additional Dependencies</i> пишем <tt>passwd.obj</tt>
+</li></ol></li>
+<li>Всё, компилируем.
+</li>
+</ol>
+</li>
+</ul>
+</div>
+<div id="comments"></div>
+<script src="comments.js"></script>
+</body>
+</html>

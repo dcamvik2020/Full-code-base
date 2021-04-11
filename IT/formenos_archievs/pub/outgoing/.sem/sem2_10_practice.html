@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Семинар 10: Использование стека для процедур/функций в Ассемблере и вызов библиотечных и системных функций - Практика</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+К моему великому сожалению, мы опять почти ничего не успели, и в этот раз нам на семинаре не хватило примерно 2 пары. Но поскольку в этот раз мы решили встречу отменить,
+то весь практический материал, следующий ниже, остаётся вам на самостоятельное изучение. Я его разбирать не буду (времени и так не хватает, увы),
+я лишь усилю контроль на сдачах и буду более тщательно принимать задачу sub, с пристрастием спрашивая не только практику, но и теорию.
+Так что готовьтесь. (Во всех смыслах слова, особенно в прямом.)
+
+Итак, погнали.
+<ul>
+<li>Хулиганские скрипты: <a href="../Assembler/Windows/NASM32/Programs/m.bat" target="_blank">m.bat</a> (сборка), <a href="../Assembler/Windows/NASM32/Programs/d.bat" target="_blank">d.bat</a> (отладка) и <a href="../Assembler/Windows/NASM32/Programs/c.bat" target="_blank">c.bat</a> (очистка) - я выложил <a href="../Assembler/Windows/NASM32/Programs" target="_blank">туда же</a>, куда обычно.
+С их помощью можно выполнять эти действия одной кнопкой в консоли (например, m <i>&lt;Enter&gt;</i>). Только имя исходника должно быть <tt>t.asm</tt>. Можно исправить это, параметризовав <tt>%1</tt> вместо <tt>t</tt>.
+Обратите внимание, что в <a href="../Assembler/Windows/NASM32/Programs/m.bat" target="_blank">m.bat</a> я объединил все команды компиляции в одну строчку через <tt>&&</tt>. Если одна из команд завершается неудачно, то всё, что справа от <tt>&&</tt>, не выполняется. Т.е. короткая логика, прямо как в Си. Эдакий импровизированный makefile получился. Дальше - на что хватит вашей фантазии.
+</li>
+<li><a href="../Assembler/Windows/NASM32/Programs_libc/funcs" target="_blank">Programs_libc/funcs</a> - набор рабочих примерчиков, демонстрирующих то, что было описано в <a href="sem2_10_theory.html">теории</a>:
+<ul>
+<li><a href="../Assembler/Windows/NASM32/Programs_libc/funcs/proc.asm" target="_blank">proc.asm</a> и <a href="../Assembler/Windows/NASM32/Programs_libc/funcs/macr.asm" target="_blank">macr.asm</a> - <a href="sem2_10_func_macro.html">разница между процедурами и макросами</a> (и ещё листинги к ним: <a href="../Assembler/Windows/NASM32/Programs_libc/funcs/proc.lst" target="_blank">proc.lst</a> и <a href="../Assembler/Windows/NASM32/Programs_libc/funcs/macr.lst" target="_blank">macr.lst</a>);
+</li>
+<li><a href="../Assembler/Windows/NASM32/Programs_libc/funcs/cdecl.asm" target="_blank">cdecl.asm</a> и <a href="../Assembler/Windows/NASM32/Programs_libc/funcs/stdcall.asm" target="_blank">stdcall.asm</a> - <a href="sem2_10_cdecl_stdcall.html">разница между соглашениями о вызовах cdecl и stdcall</a>.
+</li></ul></li>
+<li>Задачи, <!--разобранные--> которые должны были быть разобраны на семинаре (<b>вызов Сишных функций</b> из стандартной библиотеки):
+<ul>
+<li>В папке <a href="../Assembler/Linux/NASM32/Programs_libc0" target="_blank">Programs_libc0</a> - Hello World с помощью функций <a href="../Assembler/Linux/NASM32/Programs_libc0/hwu.asm" target="_blank">write</a> и <a href="../Assembler/Linux/NASM32/Programs_libc0/hwc.asm" target="_blank">puts</a> (годится для компилятора <tt><b>nasm32</b></tt> в <a href="http://style.vdi.mipt.ru/cgi-bin/new-client?contest_id=873003" target="_blank">контесте</a>).
+</li>
+<li>В соседней папке <a href="../Assembler/Linux/NASM32/Programs_libc1" target="_blank">Programs_libc1</a> - то же самое, только точка входа (метка <tt><b>_start</b></tt>) не в нашем модуле, а в библиотеке <tt>libc.so</tt> (Linux only), а в нашем модуле - традиционная функция <tt><b>main</b></tt> (годится для компилятора <tt><b>nasm-x86</b></tt> в <a href="http://style.vdi.mipt.ru/cgi-bin/new-client?contest_id=873003" target="_blank">контесте</a>).
+</li>
+<li>Имеются варианты для 64-битного Linux (<a href="../Assembler/Linux/NASM64/Programs_libc0" target="_blank">Programs_libc0</a>, <a href="../Assembler/Linux/NASM64/Programs_libc1" target="_blank">Programs_libc1</a>). Там соглашения о вызовах совсем другие и параметры передаются совсем по-другому.
+</li>
+<li>Для 32-битной Windows тоже есть пример с <a href="../Assembler/Windows/NASM32/Programs_libc/hwc.asm" target="_blank">puts</a>. Может быть, когда-нибудь выложу и для 64-битной Windows, если успею сделать.
+</li></ul>
+Соответствующие <a href="../Assembler/Windows/NASM32/Programs_libc/build.bat" target="_blank">скрипты</a> компиляции находятся в каждой <a href="../Assembler/Windows/NASM32/Programs_libc" target="_blank">папке</a>.
+Посмотрите, какие команды используются и с какими параметрами.
+
+Поскольку в Сишной библиотеке уже реализован форматный ввод-вывод и парсинг, то и мой модуль <a href="../Assembler/Windows/NASM32/Programs/ioproc.asm" target="_blank">ioproc.obj</a> вкупе с хедером <a href="../Assembler/Windows/NASM32/Programs/io.asm" target="_blank">io.asm</a> уже не нужны (для задач этого типа).
+</li>
+<li>К слову, для тех, кто хочет постичь картину мира: вот мы в Windows вызываем функции <tt><b>printf</b>()</tt>/<tt><b>scanf</b>()</tt> (из Стандарта ANSI C), которые реализованы в <tt>msvcrt.dll</tt>. Они внутри себя вызывают функции соответственно <tt><b>write</b>()</tt>/<tt><b>read</b>()</tt> (из стандарта POSIX), а они внутри себя дергают WinAPI-шные функции <tt><b>WriteFile</b>()</tt>/<tt><b>ReadFile</b>()</tt> из <tt>kernel32.dll</tt>.
+А в Linux цепочка короче: <tt><b>printf</b>()</tt>/<tt><b>scanf</b>()</tt> вызывают <tt><b>write</b>()</tt>/<tt><b>read</b>()</tt>, которые для Linux родные и они уже вызывают прерывание <tt>int 0x80</tt> и уходят в ядро.
+</li>
+</ul>
+</div>
+<div id="comments"></div>
+<script src="comments.js"></script>
+</body>
+</html>

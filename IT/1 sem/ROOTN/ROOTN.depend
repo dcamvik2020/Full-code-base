@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1539580815 source:c:\users\sony\desktop\Информатика\rootn\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1553538182 source:c:\users\sony\desktop\Информатика\2 семестр\Системы счисления\Из римской в десятичную\main.c
+	<stdio.h>
+	<stdlib.h>
+

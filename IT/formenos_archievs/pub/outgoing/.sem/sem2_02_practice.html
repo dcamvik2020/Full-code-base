@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Семинар 2: Графы и другие представители привилегированного сословия - Практика</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+<ul>
+<li><b>Style Checker v1.11</b>
+К началу нового семестра я выпустил новую версию своего <a href="../C1/formatter" target="_blank">Стайл-Чекера</a>,
+а также для тех, кто ленится скомпилировать из <a href="../C1/formatter" target="_blank">исходников</a> (или потерял доступ к ним), я сделал бинарные сборки под x86, которые теперь будут лежать и обновляться на серверах:
+
+Formenos: <a href="../Tools/StyleChecker/formatter" target="_blank">Linux</a> (<a href="../Tools/StyleChecker/formatter32" target="_blank">x86</a>, <a href="../Tools/StyleChecker/formatter64" target="_blank"><b>x86_64</b></a>), <a href="../Tools/StyleChecker/formatter.exe" target="_blank">Windows</a> (<a href="../Tools/StyleChecker/formatter32.exe" target="_blank"><b>x86</b></a>, <a href="../Tools/StyleChecker/formatter64.exe" target="_blank">x86_64</a>);
+EJudge: <a href="http://style.vdi.mipt.ru/checker/formatter" target="_blank">Linux</a> (<a href="http://style.vdi.mipt.ru/checker/formatter32" target="_blank">x86</a>, <a href="http://style.vdi.mipt.ru/checker/formatter64" target="_blank"><b>x86_64</b></a>), <a href="http://style.vdi.mipt.ru/checker/formatter.exe" target="_blank">Windows</a> (<a href="http://style.vdi.mipt.ru/checker/formatter32.exe" target="_blank"><b>x86</b></a>, <a href="http://style.vdi.mipt.ru/checker/formatter64.exe" target="_blank">x86_64</a>).
+(это два зеркала; симлинк <tt>formatter</tt> указывает на <tt>formatter64</tt>, а симлинк <tt>formatter.exe</tt> на <tt>formatter32.exe</tt>, т.е. под Linux дефолтная версия 64-битная, а под Windows 32-битная)
+
+Использовать довольно просто:
+<tt>./formatter my_prog.c my_prog_fixed.c</tt>
+После этого <tt>my_prog_fixed.c</tt> будет гарантированно проходить Coding Style check в контестах (если только, конечно, не содержит синтаксические ошибки компиляции).
+</li>
+<li><b><a href="http://ru.wikipedia.org/wiki/Алгоритм_Дейкстры" target="_blank">Алгоритм Дейкстры</a></b>
+Мои реализации этого алгоритма находятся там, где им положено быть:
+<ul>
+<li><a href="../C2/dijkstra_v1.c" target="_blank">dijkstra_v1</a> - с помощью матрицы смежности (статического двумерного массива).
+</li>
+<li><a href="../C2/dijkstra_v2.c" target="_blank">dijkstra_v2</a> - с помощью списка смежности (списков в стиле Си).
+</li></ul>
+Условие вы можете освежить в памяти, если зайдёте в наш сиротливый <a href="http://style.vdi.mipt.ru/cgi-bin/new-client?contest_id=873000" target="_blank">контест 873000</a>. Там эта задача уже воплощена в камне (в кремнии).
+</li>
+</ul>
+</div>
+<div id="comments"></div>
+<script src="comments.js"></script>
+</body>
+</html>

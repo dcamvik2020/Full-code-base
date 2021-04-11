@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Семинар 11: WinAPI, многопоточность и супер-задача - Практика</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+В прошлый понедельник у нас было разгрузочное, несколько "инновационное" бонусное занятие, выходящее за рамки курса, но очень надеюсь, что вам понравилось. Как по мне - так это одна из моих любимых тем - <font color="purple"><b><i>WinAPI</i></b></font>. Но мы же <!--b><u>продвинутая</u></b--> лучшая группа, поэтому нам полезно расширять кругозор. ;-) Однако эта тема заточена под Windows.
+Для тех, кого не было на занятии или был, но находился в сомнамбулическом состоянии, напомню основные моменты, которые у нас разбирались.
+
+Задачи, разобранные на семинаре. Итак, с чего начать?..
+<ul>
+<li>По старой доброй славной традиции, с Hello-world'а, только для GUI:
+<ul>
+<li><a href="../Assembler/Windows/gui_hw.c" target="_blank">gui_hw.c</a> - пример на Си на чистом WinAPI - использование точки входа <tt><b>WinMain</b>()</tt> вместо <tt><b>main</b>()</tt>, вызов WinAPI'шной функции <tt><b>MessageBox</b>()</tt>.
+</li>
+<li><a href="../Assembler/Windows/NASM32/Programs_Pure/gui_hw.asm" target="_blank">gui_hw.asm</a> - Ассемблерный вариант того же самого, заодно ещё один пример, как вызывать функции на Ассемблере.
+</li></ul></li>
+<li><a href="../Assembler/Windows/NASM32/Programs_Pure/copyfile.asm" target="_blank">copyfile.asm</a> - копирование файла средствами ОС<!-- (то, что разбирал ??? на доске)-->.
+Windows only - в Linux'е нет аналогичной функции. Перемесить/переименовать - есть функция <tt><b>rename</b>()</tt>, а скопировать - нет (есть только команда оболочки <b>cp</b>).
+Есть даже варианты для <a href="../Assembler/Windows/NASM64/Programs_Pure/copyfile.asm" target="_blank">NASM64</a> и <a href="../Assembler/Windows/TASM32/Programs_Pure/copyfile.asm" target="_blank">TASM32</a>.
+<ul>
+<li>Документацию по этой чудесной функции смотрим в <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa363851(v=vs.85).aspx" target="_blank">MSDN</a>'е или <a href="http://www.vsokovikov.narod.ru/New_MSDN_API/Menage_files/fn_copyfile.htm" target="_blank">тут</a> на русском.
+</li></ul></li>
+<li><a href="../C2/threads.c" target="_blank">threads.c</a> - Сишный вариант <b>многопоточной</b> программы.
+В комментариях к функции потока <tt><b>ThreadProc</b>()</tt> указано, во что разворачиваются макросы, т.е. настоящие типы данных, а в остальных комментариях - сигнатуры WinAPI'шных функций.
+<ul>
+<li>Документацию по функции <tt><b>CreateThread</b>()</tt> смотрим в <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms682453(v=vs.85).aspx" target="_blank">MSDN</a>'е. Там же смотрим все остальные WinAPI'шные функции (пользуемся поиском).
+На русском <a href="http://www.vsokovikov.narod.ru/New_MSDN_API/Process_thread/fn_createthread.htm" target="_blank">тут</a>.
+</li></ul></li>
+<li><b><a href="../C2/ells" target="_blank">Супер-задача</a></b>:
+А теперь, как обычно, на десерт самое вкусненькое.
+<ul>
+<li><a href="../C2/ells/WinAPI" target="_blank">WinAPI</a>:
+Красочное полноценное GUI приложение на чистом <a href="../C2/ells/WinAPI" target="_blank">WinAPI</a> (с окнами, кнопками, <i>Message Loop</i> и обработкой сообщений), которое использует динамическую библиотеку <a href="../C2/ells/WinAPI/ells.dll" target="_blank">ells.dll</a>, которая рисует графику весьма продолжительное время.
+Яркая демонстрация того, зачем иногда может потребоваться создавать дополнительный поток и выносить все длительные вычисления в него, и что будет, если этим пренебречь.
+Итак, попунктно, т.е. пофайлово, что в этом проекте есть:
+<ul>
+<li><a href="../C2/ells/WinAPI/ells.dll" target="_blank">ells.dll</a> - динамическая библиотека. Исходники от неё не выдаются, это "секрет фирмы". Но её можно использовать, чтобы нарисовать что-то красивое.
+</li>
+<li><a href="../C2/ells/WinAPI/ells1.c" target="_blank">ells1.c</a> и соответствующий <a href="../C2/ells/WinAPI/ells1.exe" target="_blank">ells1.exe</a> - однопоточный вариант - вычисления проводятся в том же главном потоке, что и принимает сообщения от пользователя и системы. Если запустить прорисовку (кнопка <i>Start</i>), то остановить её (нажать на кнопку <i>Stop</i>) уже не получится до тех пор, пока она не закончит рисовать.
+Только полюбуйтесь, сколько кода написано, только чтобы запрограммировать пустое окно! Зато не зависит ни от каких библиотек, использует только сервисы операционной системы - WinAPI.
+</li>
+<li><a href="../C2/ells/WinAPI/ells2.c" target="_blank">ells2.c</a>, <a href="../C2/ells/WinAPI/ells2.exe" target="_blank">ells2.exe</a> - двухпоточный вариант, в котором вышеуказанные проблемы пофикшены.
+В реализацию графического интерфейса не вдавайтесь, начните где-то со строчки 128 (функция <tt><b>BtStart_OnClick</b>()</tt> - реакция на клик по кнопке <i>Start</i>).
+Создаётся новый поток, который начинается с функции <tt><b>DynLoad</b>()</tt>. Эта поточная функция грузит <a href="../C2/ells/WinAPI/ells.dll" target="_blank">ells.dll</a> в память процесса и вызывает <tt><b>DrawElls</b>()</tt>, которая вызывает функцию <tt><b>demo</b>()</tt> из DLL-ки.
+Обратите особое внимание - два потока разделяют общее адресное пространство, используют общие переменные - указатели на функции <tt><b>demo</b></tt>, <tt><b>stop</b></tt> и другие, да и саму <a href="../C2/ells/WinAPI/ells.dll" target="_blank">ells.dll</a> целиком.
+Эти два потока, словно молнии, могут пронизывать общие исполняемые модули (<a href="../C2/ells/WinAPI/ells.dll" target="_blank">ells.dll</a>, <a href="../C2/ells/WinAPI/ells2.exe" target="_blank">ells2.exe</a> и др.) и вообще всё адресное пространство процесса, а могут даже псевдо-одновременно выполнять одну и ту же область кода (что будет, если дважды-трижды кликнуть по кнопке <i>Start</i>???? Что там будет с DLL-кой?).
+</li>
+<li><a href="../C2/ells/WinAPI/ells!.exe" target="_blank">ells!.exe</a> - демонстрация ещё нескольких возможностей библиотеки <a href="../C2/ells/WinAPI/ells.dll" target="_blank">ells.dll</a>. Если есть режим "<tt><b>demo</b></tt>", то есть, наверное, и более полнофункциональные режимы.
+</li>
+<li><i><a href="../C2/ells/WinAPI/ells.sln" target="_blank">ells.sln</a>, <a href="../C2/ells/WinAPI/ells.vcproj" target="_blank">ells.vcproj</a>, <a href="../C2/ells/WinAPI/ells.res" target="_blank">ells.res</a> (иконка), <a href="../C2/ells/WinAPI/XPstyle.manifest" target="_blank">XPstyle.manifest</a> - файлы проекта для M$ Visual Studio 2008 Express.</i>
+</li>
+<li><i><a href="../C2/ells/WinAPI/ells.pro" target="_blank">ells.pro</a>, <a href="../C2/ells/WinAPI/iconres.o" target="_blank">iconres.o</a> - файлы проекта для QtCreator.</i>
+</li>
+<li><i><a href="../C2/ells/WinAPI/ells.cbp" target="_blank">ells.cbp</a>, <a href="../C2/ells/WinAPI/iconres.o" target="_blank">iconres.o</a> - файлы проекта для Code::Blocks.</i>
+</li>
+<li><i><a href="../C2/ells/WinAPI/.project" target="_blank">.project</a>, <a href="../C2/ells/WinAPI/.cproject" target="_blank">.cproject</a>, <a href="../C2/ells/WinAPI/.settings" target="_blank">.settings</a>, <a href="../C2/ells/WinAPI/iconres.o" target="_blank">iconres.o</a> - файлы проекта для Eclipse.</i>
+</li>
+<li><i><a href="../C2/ells/WinAPI/build.bat" target="_blank">build.bat</a> - как собрать это приложение из консоли, безо всяких IDE-шек.</i>
+</li></ul>
+Единственный момент во всех этих файлах проекта и скриптах компиляции - они ожидают файл ells.c, которого нет. Переименуйте <a href="../C2/ells/WinAPI/ells1.c" target="_blank">ells1.c</a> или <a href="../C2/ells/WinAPI/ells2.c" target="_blank">ells2.c</a> обратно в ells.c.
+</li>
+<li><i><a href="../C2/ells/Qt" target="_blank">Qt</a>:
+То же самое, только на <a href="../C2/ells/Qt" target="_blank">Qt</a>.
+Сделано на скорую руку из Сишного варианта, поэтому кое-что не очень-то и в ООП-шном стиле, но зато легко сравнивать, сколько строчек кода ушло собственно на реализацию GUI.
+</i></li></ul></li></ul>
+</div>
+<div id="comments"></div>
+<script src="comments.js"></script>
+</body>
+</html>

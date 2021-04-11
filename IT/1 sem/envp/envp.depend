@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1565531770 source:c:\users\sony\desktop\Информатика\1 семестр\envp\main.c
+	<stdio.h>
+	<string.h>
+

@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Семинар 6: Архитектура x86-х процессоров и начало Ассемблера - Теория</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+<ol>
+<li><b>Архитектуру ЭВМ</b> мы успели взять на <a href="sem2_05_theory.html">прошлом семинаре</a>.
+<ul>
+<li>В ту же копилку: читаем ещё художественную литературу про прерывания:
+<ul>
+<li>Карпов-Коньков (Основы ОС, 3-й семестр): Лекция 13, раздел "Опрос устройств и прерывания. Исключительные ситуации и системные вызовы", с.224, 225 и, внимательнее всего, 226. Особенно обращаем внимание и запоминаем, какие бывают типы прерываний и чем они друг от друга отличаются.
+</li></ul></li></ul></li>
+<li><b>Архитектура x86</b>:
+<ul>
+<li><a href="../Korotin_2010" target="_blank">Коротин-2010</a>:
+<ul>
+<li><a href="../Korotin_2010/Lekcija_2.ppsx" target="_blank">Лекция 2 (Понятие архитектуры ЭВМ)</a>: слайды 27-30, 34 (можно ещё захватить слайды про конвейеры 23-26);
+</li></ul></li>
+<li>Любимый ресурс:
+<ul>
+<li><a href="http://ru.wikipedia.org/wiki/8086#.D0.9E.D0.BF.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D0.B5" target="_blank">Архитектура семейства x86 процессоров</a> (начиная с раздела "Регистры" и до "Система команд", хотя и последнюю тоже можно захватить)
+</li>
+<li><a href="http://ru.wikipedia.org/wiki/X86#.D0.A0.D0.B5.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC_.28real_mode.29" target="_blank">Реальный режим</a> раз (до раздела "Защищённый режим")
+</li>
+<li><a href="http://ru.wikipedia.org/wiki/Реальный_режим" target="_blank">Реальный режим</a> два (раздел "Описание", если интересно, то и "Использование")
+</li></ul></li></ul></li>
+<li>Введение в Ассемблер, можно начать заранее читать, чтобы легче усваивался материал на семинаре:
+<ul>
+<li><a href="../Korotin_2010/Лекция 3.ppsx" target="_blank">Лекция 3 (Вв. в программирование на Ассемблере)</a>: слайды  1-18... с поправкой на то, что всякие лишние TASM'овские директивы нам не нужны.
+</li></ul></li>
+<li>Много всякого вкусненького можно найти на <a href="http://acm.mipt.ru/twiki/bin/view/Asm/WebHome" target="_blank">вики-свалке</a>.
+Но это тем, кто решил не ограничиваться нашим курсом, и хочет бОльшего.
+</li>
+<li>Описания ассемблерных команд мы будем смотреть здесь:
+<a href="http://web.archive.org/web/20150512184626/http://www.kolasc.net.ru/cdo/programmes/assembler/tc.html" target="_blank">http://www.kolasc.net.ru/cdo/programmes/assembler/tc.html</a>
+Добавьте эту страницу себе в закладки, Избранное и т.д.
+Вот прошли мы, например, команду <a href="http://web.archive.org/web/20150522012823/http://www.kolasc.net.ru/cdo/programmes/assembler/mov.html" target="_blank">mov</a> (а также <a href="http://web.archive.org/web/20141223184812/http://www.kolasc.net.ru/cdo/programmes/assembler/nop.html" target="_blank">nop</a>, <a href="http://web.archive.org/web/20150514080334/http://www.kolasc.net.ru/cdo/programmes/assembler/add.html" target="_blank">add</a>, <a href="http://web.archive.org/web/20150608163650/http://www.kolasc.net.ru/cdo/programmes/assembler/sub.html" target="_blank">sub</a>, <a href="http://web.archive.org/web/20151112214016/http://www.kolasc.net.ru/cdo/programmes/assembler/inc.html" target="_blank">inc</a>, <a href="http://web.archive.org/web/20150413093942/http://www.kolasc.net.ru/cdo/programmes/assembler/dec.html" target="_blank">dec</a>, <a href="http://web.archive.org/web/20150924163714/http://www.kolasc.net.ru/cdo/programmes/assembler/int.html" target="_blank">int</a>), после этого дома открываете, ищете её в списке на этом сайте и читаете её описание, синтаксис, параметры... Используйте как справочник.
+</li>
+<li><a href="../Materials/Assembler.pdf" target="_blank">Assembler.pdf</a> - табличка с соответствием ассемблерных команд и Сишных конструкций.
+Это то, что я сегодня раздавал в виде распечаток. 4-я страница совсем необязательная, а остальные команды мы возьмём в том или ином объёме.
+</li>
+<li>По собственно компилятору NASM основная ссылка - это <a href="http://www.opennet.ru/docs/RUS/nasm/nasm_ru2.html" target="_blank">мануал</a> от разработчиков, в переводе.
+Как самоучитель - это, имхо, не очень полезный ресурс, скорее годится как справочник для тех, которые переходят на Nasm с другого диалекта ассемблера. Кроме того, там много лишнего, чего мы брать не будем (если посмотреть соседние главы). Но это лучшее из того, что я нашёл про Nasm.
+</li>
+<li>Также я выложил неполный список операций для DOS-овского <a href="../Materials/int0x21.txt" target="_blank">21-го прерывания</a>.
+Он нужен будет вам для двух-трёх задач в следующий раз, после чего перейдём совсем к другим интерфейсам.
+</li>
+</ol>
+</div>
+<div id="comments"></div>
+<script src="comments.js"></script>
+</body>
+</html>

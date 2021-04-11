@@ -1,0 +1,60 @@
+﻿+*547	2019/05/06 14:30:28	wazor		wazor			fsin
++*556	2019/05/06 14:37:20	vashchilko.av	vashchilko.av		farcsin
++605	2019/05/06 15:56:41	wazor		wazor			farcsin
+
++502	2019/04/29 23:37:19	vashchilko.av	vashchilko.av		print_bin_reverse
+
++779	2019/04/23 01:31:03	alekseevAV	thundercake		mega-139
++786	2019/04/27 18:12:29	Srip09		Srip09			mega-129
++792	2019/04/27 23:53:42	vashchilko.	vashchilko.av		mega-77
++796	2019/05/01 15:03:55	alex_zhk	alex_zhk		mega-181	gcc-vg
++803	2019/05/02 09:58:37	dpenkin		Дмитрий Пенкин		mega-159	gcc-vg
++808	2019/05/03 12:56:40	sunnut		Натальченко Александр	mega-168
++815	2019/05/04 15:17:51	azrael_rico	azrael_rico		mega-198
++817	2019/05/05 11:32:44	troman		Roma			mega-202
+
+275	2019/04/19 17:41:08	wazor		wazor			sub
+369	2019/04/23 00:51:57	samuil		Samuil			sub
++374	2019/04/28 11:52:42	wazor		wazor			cdecl
++375	2019/04/28 11:53:30	wazor		wazor			stdcall
++379	2019/04/28 17:00:18	Srip09		Сергей			cdecl
++380	2019/04/28 17:00:51	Srip09		Сергей			stdcall
+
+92	2019/04/01 21:49:04	wazor		wazor			triangle
+103	2019/04/03 20:12:51	sunnut		Александр Натальченко	triangle
+370	2019/04/23 01:13:30	samuil		Samuil			triangle
+1107	2019/04/25 01:51:40	vashchilko.av	vashchilko.av		page
+1108	2019/04/25 01:56:18	vashchilko.av	vashchilko.av		segment
+1122	2019/04/25 17:16:56	vashchilko.av	vashchilko.av		segment_page
+1124	2019/04/25 17:28:51	alekseevAV	thundercake		page
+1137	2019/04/25 18:32:13	alekseevAV	thundercake		segment_page
+
+23	2019/03/25 16:15:02	samuil		Samuil			maxn
+107	2019/04/05 19:03:38	azrael_rico	azrael_rico		maxn
+109	2019/04/06 12:53:45	samuil		Samuil			table
+281	2019/04/19 18:08:35	wazor		wazor			table
+1117	2019/04/25 16:34:42	alekseevAV	thundercake		stone
++527	2019/05/04 01:28:11	nikosimus	Никита			maxn
+
+999	2019/04/07 14:23:25	alex_z		alex_z			cache
+1174	2019/04/28 15:49:14	alex_z		alex_z			bruteforce
+
+836	2019/03/16 15:17:27	vashchilko.av	vashchilko.av		perevod
+
+314	2019/02/16 14:02:38	vashchilko.av	vashchilko.av		rank
+439	2019/02/19 01:32:14	azrael_rico	azrael_rico		determinant
+499	2019/03/01 01:08:04	samuil		Samuil			systemN
+500	2019/03/01 20:57:18	samuil		Samuil			vectorN
+693	2019/03/09 17:28:40	sunnut		Александр Натальченко	vectorN
+853	2019/03/22 11:45:49	dpenkin		Дмитрий Пенкин		determinant
+963	2019/04/04 09:33:55	dpenkin		Дмитрий Пенкин		systemN
+1000	2019/04/07 17:14:44	alex_z		alex_z			vectorN
+1015	2019/04/13 18:15:05	alex_z		alex_z			rank
+1078	2019/04/21 00:20:30	nikosimus	Никита			determinant
+
+427	2019/02/18 00:54:14	alex_z		alex_z			FatherOfTheMatrix2
+462	2019/02/21 00:35:26	azrael_rico	azrael_rico		FatherOfTheMatrix
+464	2019/02/21 01:06:20	azrael_rico	azrael_rico		FatherOfTheMatrix2
+484	2019/02/26 01:32:03	nikosimus	Никита			FatherOfTheMatrix
+486	2019/02/26 02:50:32	nikosimus	Никита			FatherOfTheMatrix2
+733	2019/03/10 05:10:02	samuil		Samuil			FatherOfTheMatrix

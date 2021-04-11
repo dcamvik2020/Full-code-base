@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1548794291 source:c:\users\sony\desktop\Информатика\informatics\distance_point_segment_of_straight_line\main.c
+	<stdio.h>
+	<math.h>
+

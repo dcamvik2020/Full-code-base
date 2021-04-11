@@ -1,0 +1,1 @@
+..\tasm /mx /la %1.asm

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1544196658 source:c:\users\sony\desktop\Информатика\q_sort\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

@@ -1,0 +1,9 @@
+#! /bin/sh
+
+readelf -e -W $1
+# symbols:
+#readelf -s $1
+#objdump -t $1
+#nm $1
+objdump -d -w $1
+gdb -q $1

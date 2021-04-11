@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1550676275 source:c:\users\sony\desktop\Информатика\2 семестр\system_of_equations\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1550944135 source:c:\users\sony\desktop\Информатика\2 семестр\Матрицы\system_of_equations\main.c
+	<stdio.h>
+	<stdlib.h>
+

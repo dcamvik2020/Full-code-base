@@ -1,0 +1,4 @@
+abracadabra
+/usr/bin/whoami
+which gcc
+echo Hell   Word!

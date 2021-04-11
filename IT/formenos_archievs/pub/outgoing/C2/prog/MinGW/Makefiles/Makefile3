@@ -1,0 +1,8 @@
+prog.exe: prog.o unit.o
+	gcc $^ -o $@
+
+%.o: %.c header.h
+	gcc -c $<
+
+clean:
+	del *.o *.exe

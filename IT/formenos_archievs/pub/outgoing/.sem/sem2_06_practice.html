@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Семинар 6: Архитектура x86-х процессоров и начало Ассемблера - Практика</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+Теперь, что касается практики:
+<ul>
+<li>Выложенные компиляторы:
+<ul>
+<li><a href="../Compilers/Nasm16.exe" target="_blank">Nasm16.exe</a> - для Windows x64 я склепал кастомную сборку DOSBox.
+Это то, что мы устанавливали - DOSBox с компилятором <tt>nasm</tt>, линкером <tt>tlink</tt> и отладчиком <tt>td</tt>. Распаковать в <tt>C:\student</tt>, либо исправлять пути, как указано в кратенькой инструкции <a href="../Compilers/Nasm16.ReadMe!.txt" target="_blank">Nasm16.ReadMe!.txt</a>, почитайте, кому интересно.
+</li>
+<li>То же самое, только в распакованном виде вот <a href="../Assembler/DOS" target="_blank">тут</a>.
+Пользователи 32-битной Windows могут юзать эти утилиты напрямую.
+</li></ul></li>
+<li>Разобранная программа Hello World находится <a href="../Assembler/DOS/NASM16/Programs" target="_blank">тут</a>:
+<ul>
+<li><a href="../Assembler/DOS/NASM16/Programs/hw.asm" target="_blank">hw.asm</a> - пример программы на этом ассемблере и
+</li>
+<li><a href="../Assembler/DOS/NASM16/Programs/build.bat" target="_blank">build.bat</a> - команды компиляции. Можно набирать их самому вручную, а можно запускать
+<tt>build hw</tt>
+(из DOSBox'а в 64-битной ОСи или из командной строки cmd.exe в 32-битной; находиться при этом надо в директории <tt>...\NASM16\Programs</tt>).
+</li></ul></li></ul>
+Но вообще, понадобится это нам только на следующем занятии, так что можно сильно не заморачиваться.
+Но на следующем занятии я рассчитываю, что 2-3 задачи вы решите на оценку, одна из которых протухнет сразу после семинара!
+</div>
+<div id="comments"></div>
+<script src="comments.js"></script>
+</body>
+</html>

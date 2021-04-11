@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Семинар 8: 32- и 64-битные Ассемблеры - Практика</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+<ol>
+<!--0. <a href="../Assembler/DOS/NASM16/Programs/inout.asm" target="_blank">inout.asm</a> - должок с того семинара - программа ввода и вывода строки на 16-битном ассемблере. В основном, полезна как пример индексации строчки (то бишь массива), стр. 32 - 37. Я хотел бы, чтобы в конечном итоге у всех этот пример был, чтобы вы в нём разобрались.
+-->
+<li>Для задач, которые мы разбираем на семинаре у доски, я завёл <a href="http://style.vdi.mipt.ru/cgi-bin/new-client?contest_id=873003" target="_blank">дополнительный контест 873003</a>.
+Эти задачи я составил, в основном, для тестирования возможностей компиляторов и самой библиотеки <tt><b>ioproc</b></tt>, а также для того, чтобы у вас оставались условия задач.
+
+<u>!!! Внимание! Задача <b>hello1</b> полезна в том отношении, что там в условии написан интерфейс <a href="../Assembler/Windows/NASM32/Programs/io.asm" target="_blank">io.asm</a> и как пользоваться моими макросами ввода-вывода. !!!</u>
+</li>
+<li>Разобранные на семинаре задачи:
+<ol>
+<li><a href="../Assembler/Windows/NASM32/Programs/repeater.asm" target="_blank">repeater.asm</a> - программа, копирующая стандартный поток ввода на стандартный поток вывода - всё, что вводим, то и выводим (можно с её помощью копировать текстовые файлы); это пример использования секции неинициализированных данных BSS.
+</li>
+<li><a href="../Assembler/Windows/NASM32/Programs/sum.asm" target="_blank">sum.asm</a> - пример использования макроса ввода <tt>getn</tt> для регистра и переменной.
+</li>
+<li><a href="../Assembler/Windows/NASM32/Programs/sumn.asm" target="_blank">sumn.asm</a> - сумма n чисел, пример работы с переменными и реализации цикла for ручками.
+</li>
+<li><a href="../Assembler/Windows/NASM32/Programs/suml.asm" target="_blank">suml.asm</a> - тоже сумма n чисел, но цикл сделан через команду <tt>loop</tt>.
+</li></ol></li></ol>
+<ul>
+<li>P.S. Как вы могли заметить, кроме <a href="../Assembler/Windows/NASM32/Programs" target="_blank">Nasm</a>'а я выкладываю эквивалентные примеры также и под старый добрый <a href="../Assembler/Windows/TASM32/Programs" target="_blank">Tasm</a>. Что называется, на всякий пожарный случай. Для сравнения. <a href="../Korotin_2010" target="_blank">Презентации</a> и <a href="http://web.archive.org/web/20150512184626/http://www.kolasc.net.ru/cdo/programmes/assembler/tc.html" target="_blank">книжки</a> у нас всё-таки заточены под Tasm...
+</li>
+</ul>
+</div>
+<div id="comments"></div>
+<script src="comments.js"></script>
+</body>
+</html>

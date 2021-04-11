@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Семинар 8: 32- и 64-битные Ассемблеры - Инфраструктура</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+<!--ul>
+<li>Приготовленный мною набор компиляторов, линкеров, примеров и библиотек под Nasm32 лежит, естественно, тут:
+<a href="../Assembler/Windows/NASM32" target="_blank">formenos.campus.mipt.ru/outgoing/Assembler/Windows/NASM32</a>. С этого и начнём следующий семинар, а пока кто хочет, может попробовать поиграться самостоятельно.
+Как минимум, лучше скачать себе это на флешку/ноут, чтобы не тормозить на семинаре. Внимание, я эти папки ещё буду расширять, дополнять и изменять!
+<ul>
+<li>Можете пока полюбоваться/попугаться на Hello World на Ассемблере в Windows: <a href="../Assembler/Windows/NASM32/Programs_Pure/hw.asm" target="_blank">hw.asm</a> (консольный) и <a href="../Assembler/Windows/NASM32/Programs_Pure/gui_hw.asm" target="_blank">gui_hw.asm</a> (графический). А также на ввод-вывод строки: <a href="../Assembler/Windows/NASM32/Programs_Pure/inout.asm" target="_blank">inout.asm</a>.
+</li>
+<li>Для сокрытия всего этого ужаса/сокровища от ваших глаз я написал библиотеку ввода-вывода <a href="../Assembler/Windows/NASM32/Programs/ioproc.asm" target="_blank">ioproc.asm</a> и <a href="../Assembler/Windows/NASM32/Programs/io.asm" target="_blank">io.asm</a>, а также примеры использования: <a href="../Assembler/Windows/NASM32/Programs/hw.asm" target="_blank">hw.asm</a> и <a href="../Assembler/Windows/NASM32/Programs/inout.asm" target="_blank">inout.asm</a>.
+</li>
+<li>Собственно, именно из <a href="../Assembler/Windows/NASM32/Programs/ioproc.asm" target="_blank">ioproc.asm</a> я и надёргал примеры реализации IF-THEN-ELSE, AND, OR, циклов. Т.е. они все там. Подробно разбирать эту библиотеку, ес-но, не заставляю, но проглядеть по диагонали и поизучать может быть интересно.
+</li></ul>
+Дальше пока не буду морочить вам голову раньше времени, в следующий раз распишу подробнее, что к чему.
+</li>
+<li>P.S. Как вы могли заметить, кроме <a href="../Assembler/Windows/NASM32" target="_blank">Nasm</a>'а я выкладываю эквивалентные примеры также и под старый добрый <a href="../Assembler/Windows/TASM32" target="_blank">Tasm</a>. Что называется, на всякий пожарный случай. Для сравнения. Презентации и книжки у нас всё-таки заточены под Tasm...
+</li>
+</ul-->
+<ol>
+<li>Компилятор, набор линкеров на выбор (32 и 64 бит), а также скриптов компиляции, которые помогут вам в вашей трудной жизни: <a href="../Assembler/Windows/NASM32" target="_blank">NASM32</a>
+Рядом с этой папкой можете увидеть версию тех же самых программ и скриптов для старого <a href="../Assembler/Windows/TASM32" target="_blank">Tasm32</a> (если надо будет сравнить синтаксис), для Windows64 (<a href="../Assembler/Windows/NASM64" target="_blank">NASM64</a>), а также для <a href="../Assembler/Linux/NASM32" target="_blank">Linux32</a> и <a href="../Assembler/Linux/NASM64" target="_blank">Linux64</a>, в том числе для компилятора <a href="../Assembler/Linux/GAS32" target="_blank">GAS</a> с <a href="../Assembler/Linux/GAS32/Intel" target="_blank">интеловским</a> и <a href="../Assembler/Linux/GAS32/ATT" target="_blank">AT&T-шным</a> синтаксисом (пока что только программы на чистом ассемблере, без моей библиотеки ввода-вывода, которую я планирую портировать и туда тоже).
+<ol>
+<li>Отладчик <a href="../Assembler/Windows/NASM32/TD32.EXE" target="_blank">TD32.EXE</a> имеет багу - при первом запуске размер высоты буфера окна не соответствует размеру реального окна. Чтобы это вылечить, надо щёлкнуть Правой Клавишей Мыши (ПКМ) по <i>заголовку окна -&gt; Свойства -&gt; Расположение -&gt; Высота буфера экрана</i>, изменить значение с 127 на 25 (или другое, которое сочтёте нужным, но тогда и высоту окна сделать таким же). ОК.
+
+<b><u>!!! Умение пользоваться пошаговой отладкой в этом семестре является обязательным и одним из самых важных, без него вы не сделаете ключевые задачи !!!</u></b>
+</li></ol></li>
+<li>Для каждого компилятора есть подпапка <a href="../Assembler/Windows/NASM32/Programs_Pure" target="_blank">Programs_Pure</a> - набор программок на ЧИСТОМ ассемблере, безо всяких библиотек ввода-вывода (на чистом <a href="../Assembler/Windows/NASM32/Programs_Pure" target="_blank">WinAPI в Windows</a> или <a href="../Assembler/Linux/NASM32/Programs_Pure" target="_blank">прерываниях в Linux</a>).
+В папках <a href="../Assembler/Windows" target="_blank">Assembler/Windows</a> или <a href="../Assembler/Linux" target="_blank">Assembler/Linux</a> находятся их <a href="../Assembler/Windows/inout.c" target="_blank">Сишные аналоги</a>.
+Далее я приведу примеры ассемблерных программ для Windows.
+<ol>
+<li>
+<ul>
+<li><a href="../Assembler/Windows/gui_hw.c" target="_blank">gui_hw.c</a> - простейшая оконная программка. Многие Сишные компиляторы сами понимают, что в качестве точки входа надо линковать <tt><b>WinMain</b>()</tt>, а не <tt><b>main</b>()</tt>. Если нет, надо выбрать подходящий тип проекта. Если кто захочет попробовать и не справится - пищите мне.
+</li>
+<li><a href="../Assembler/Windows/NASM32/Programs_Pure/gui_hw.asm" target="_blank">gui_hw.asm</a> - то же самое, только на чистом ассемблере.
+</li></ul></li>
+<li>
+<ul>
+<li><a href="../Assembler/Windows/hw.c" target="_blank">hw.c</a> - Hello World на WinAPI. Надо настроить Сишный компилятор так, чтобы проект был Win32, но чёрное окно консоли не отключалось.
+</li>
+<li><a href="../Assembler/Windows/NASM32/Programs_Pure/hw.asm" target="_blank">hw.asm</a> - её ассемблерный аналог.
+Можете посмотреть, что на WinAPI консольные программы выглядят даже страшнее оконных. И именно с этими ужасами нам и пришлось бы работать, если бы я не упаковал их в свою <a href="../Assembler/Windows/NASM32/Programs/ioproc.asm" target="_blank">библиотечку ввода-вывода</a>.
+</li>
+<li>А в версии для Linux с консолью всё намного проще, там она как родная (<a href="../Assembler/Linux/hw.c" target="_blank">hw.c</a>, <a href="../Assembler/Linux/NASM32/Programs_Pure/hw.asm" target="_blank">hw.asm</a>).
+</li></ul></li>
+<li><a href="../Assembler/Windows/NASM32/Programs_Pure/inout.asm" target="_blank">inout.asm</a>/<a href="../Assembler/Windows/inout.c" target="_blank">inout.c</a> - ввод и вывод той же строки, что была введена.
+</li>
+<li>Для избавления от рутинных команд компиляции я написал скрипт <a href="../Assembler/Windows/NASM32/Programs_Pure/build.bat" target="_blank">build.bat</a>. Например, если у вас есть программа <a href="../Assembler/Windows/NASM32/Programs_Pure/hw.asm" target="_blank">hw.asm</a>, то скомпилировать её можно, находясь в папке <a href="../Assembler/Windows/NASM32/Programs_Pure" target="_blank">Programs_Pure</a> или <a href="../Assembler/Windows/NASM32/Programs" target="_blank">Programs</a>, в командной строке заклинанием:
+<tt>build hw</tt>
+Расширение <tt>.asm</tt> указывать <b>не надо</b>!
+Обратите внимание, что при компиляции метка "<tt>_start</tt>" (которая принята в форматах win32, win64 и в линуксовом elf, т.е. в контесте) заменяется на метку "<tt>..start</tt>" (которая принята в DOS'овском формате obj - для отладчика <a href="../Assembler/Windows/NASM32/TD32.EXE" target="_blank">TD32.EXE</a>). А при линковке кроме нашего объектного файла hw.obj также указывается и <a href="../Assembler/Windows/NASM32/Programs_Pure/IMPORT32.LIB" target="_blank">import32.lib</a> - библиотека импорта, в которой содержатся адреса функций <tt><b>ReadFile</b>()</tt>, <tt><b>WriteFile</b>()</tt>, <tt><b>GetStdHandle</b>()</tt>, <tt><b>ExitProcess</b>()</tt>, <tt><b>MessageBoxA</b>()</tt> и т.д. из динамических разделяемых библиотек <tt>kernel32.dll</tt>, <tt>user32.dll</tt> и других.
+</li>
+<li>Там же есть ещё несколько полезных <a href="../Assembler/Windows/NASM32/Programs_Pure/listing.bat" target="_blank">скриптов</a>. Посмотрите их.
+</li></ol>
+Насчёт WinAPI. Это необязательно ботать, т.к. это выходит за рамки нашего курса. Но если кому-то интересно, если вас интересуют подробности, что-то непонятно, спрашивайте меня. Ну или читайте <a href="http://msdn.microsoft.com/en-us/library/634ca0c2(v=vs.90).aspx" target="_blank">MSDN</a> (тоже полезно научиться добывать информацию самостоятельно).
+
+Для линуксоидов в папках <a href="../Assembler/Linux/NASM32/Programs_Pure" target="_blank">NASM32</a>, <a href="../Assembler/Linux/NASM64/Programs_Pure" target="_blank">NASM64</a>, <a href="../Assembler/Linux/GAS32/Intel/Programs_Pure" target="_blank">GAS32</a>, <a href="../Assembler/Linux/GAS64/Intel/Programs_Pure" target="_blank">GAS64</a>, в подпапке Programs_Pure - чистейшие ассемблерные программы, использующие только прерывание (можно даже проверить в <a href="http://style.vdi.mipt.ru/cgi-bin/new-client?contest_id=873003" target="_blank">контесте 873003</a>).
+</li>
+<li>Для сокрытия всего этого ужаса/сокровища от ваших глаз я написал библиотеку ввода-вывода <tt><b>ioproc</b></tt> (находится, например, в папке <a href="../Assembler/Windows/NASM32/Programs" target="_blank">Programs</a>):
+<ol>
+<li><a href="../Assembler/Windows/NASM32/Programs/ioproc.asm" target="_blank">ioproc.asm</a> - модуль с процедурами ввода и вывода, который достаточно откомпилировать один раз за семестр;
+<ol>
+<li>Если кому-то интересен алгоритм ввода, который я использовал в этой библиотеке, то можно посмотреть его Сишный аналог здесь: <a href="../Assembler/buffered_input.c" target="_blank">Assembler/buffered_input.c</a>
+Про этот файл я напишу <a href="sem2_08_adv_magic.html">отдельное письмо</a>.
+</li>
+<li>Собственно, именно из <a href="../Assembler/Windows/NASM32/Programs/ioproc.asm" target="_blank">ioproc.asm</a> я и надёргал примеры реализации IF-THEN-ELSE, AND, OR, циклов. Т.е. они все там. Подробно разбирать эту библиотеку, ес-но, не заставляю, но проглядеть по диагонали и поизучать может быть интересно.
+</li></ol></li>
+<li><a href="../Assembler/Windows/NASM32/Programs/io.asm" target="_blank">io.asm</a> - "заголовочный" файл к <a href="../Assembler/Windows/NASM32/Programs/ioproc.asm" target="_blank">ioproc.asm</a> (аналог хедера <tt>.h</tt> в Си) с макросами для упрощения интерфейса ввода-вывода (нужно инклудить в каждую вашу <tt>asm</tt> программу).
+</li>
+<li><a href="../Assembler/Windows/NASM32/Programs/hw.asm" target="_blank">hw.asm</a>, <a href="../Assembler/Windows/NASM32/Programs/inout.asm" target="_blank">inout.asm</a> - можете посмотреть, в какую <i>прелесссть</i> превратились ужасы из соседней подпапки <a href="../Assembler/Windows/NASM32/Programs_Pure" target="_blank">Programs_Pure</a> с помощью моей волшебной библиотеки <tt><b>ioproc</b></tt>. :-)
+</li>
+<li><a href="../Assembler/Windows/NASM32/Programs/build.bat" target="_blank">build.bat</a> - скрипт для компиляции многомодульных программ на Ассемблере с модулем ioproc.obj.
+Заметьте, что по сравнению с прошлой версией <a href="../Assembler/Windows/NASM32/Programs_Pure/build.bat" target="_blank">build.bat</a> из соседней папки тут ещё добавилась компиляция модуля <a href="../Assembler/Windows/NASM32/Programs/ioproc.asm" target="_blank">ioproc.asm</a> и линковка ioproc.obj.
+</li></ol></li>
+<li>Для тех, кто не может зайти ко мне на сервер по самбе и скачать все папки целиком, чтобы не скачивать утомительно из браузера по одному файлу, я выложил архивы этих папок (только самое необходимое): под Windows <a href="../Assembler/Windows/NASM32.zip" target="_blank"><b>NASM32.zip</b></a> и под Linux (32-/64-бит NASM/GAS) <a href="../Assembler/Linux.tar.gz" target="_blank"><b>Linux.tar.gz</b></a>.
+Распакуйте в любое место на жёстком диске, но настоятельно рекомендую, чтобы полный путь к исполняемым файлам и скриптам не содержал пробелов, русских букв и директорий с именами длиннее 8 символов.
+</li>
+</ol>
+</div>
+<div id="comments"></div>
+<script src="comments.js"></script>
+</body>
+</html>

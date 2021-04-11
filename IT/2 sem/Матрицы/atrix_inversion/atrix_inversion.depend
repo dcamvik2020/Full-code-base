@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1550753664 source:c:\users\sony\desktop\Информатика\2 семестр\atrix_inversion\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1550753664 source:c:\users\sony\desktop\Информатика\2 семестр\Матрицы\atrix_inversion\main.c
+	<stdio.h>
+	<stdlib.h>
+

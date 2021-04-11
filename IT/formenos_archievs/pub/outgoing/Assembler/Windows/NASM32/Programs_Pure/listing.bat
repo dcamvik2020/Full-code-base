@@ -1,0 +1,1 @@
+..\nasm -f obj %1.asm -l %1.lst

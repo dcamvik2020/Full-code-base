@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Семинар 10: Использование стека для процедур/функций в Ассемблере и вызов библиотечных и системных функций - Теория</title>
+</head>
+<body>
+<div style="white-space: pre-wrap;">
+<ul>
+<li>В понедельник мы закончили рисовать нашу Картину Мира. А точнее, посмотрели 3-ю её часть: как устроено адресное пространство процесса, куда и что в него грузится, какие есть типы памяти (секция данных, секция констант, прочие секции, стек, куча - и как это всё связано с виртуальной памятью), и причём тут сегменты и страницы. Это всё надо понимать хотя бы на общем уровне, т.к. на зачёте будет много вопросов, так или иначе использующих этот материал. К сожалению, конкретных ссылок тут дать не могу, т.к. это обобщение моего опыта и разнообразных знаний, полученных в разных местах, на разных предметах. Разве что книжку Карпова можно почитать и в Вики побродить по всяким статьям. Ну и, конечно, ваши конспекты, а также то, что вы запомнили и осознали!
+Но если у кого-то есть какие-то вопросы - обязательно задавайте!
+</li>
+<li>Как описывать и вызывать <b>функции и макросы</b>: думаю, <a href="../Korotin_2010" target="_blank">презентации Коротина</a> тут малополезны, т.к. они заточены под синтаксис TASM/MASM, поэтому вам остаётся только пользоваться своими записями, моими примерами, которые я выкладываю на сервер, смотреть, как это дело реализовано в моих библиотеках ввода-вывода <a href="../Assembler/Windows/NASM32/Programs/io.asm" target="_blank">io.asm</a> и <a href="../Assembler/Windows/NASM32/Programs/ioproc.asm" target="_blank">ioproc.asm</a>. Ну и, конечно, задавать вопросы мне, я с удовольствием объясню, что осталось непонятным. Но всё-таки приведу здесь <a href="sem2_10_func_macro.html">два маленьких примера</a>, чтобы сравнить процедуры и макросы.
+</li>
+<li><b>Использование стека при вызове функций</b>: тут, я считаю, лучше обратиться всё-таки к <a href="../Korotin_2010" target="_blank">презентации Коротина-2010</a>:
+<ul>
+<li><a href="../Korotin_2010/Лекция 9.ppsx" target="_blank">Лекция 9</a>, слайды 19 - 34 (передача параметров в процедуры)
+</li>
+<li><a href="../Korotin_2010/Лекция 10.ppsx" target="_blank">Лекция 10</a>, слайды 9 - 11 (соглашения о вызовах)
+</li></ul>
+Это одни из самых важных слайдов в этом семестре, посмотрите обязательно.
+Там, правда, приводится пример для 16-битного ассемблера, но вы, надеюсь, сможете сделать необходимые поправки (размер машинного слова и элемента стека 2 -&gt; 4, регистры sp -&gt; esp и т.д.). Если что - отладчик <a href="../Assembler/Windows/NASM32/TD32.EXE" target="_blank">TD32.EXE</a> вам в руки.
+Также в случае затруднения смотрим команды <a href="http://web.archive.org/web/20150528230750/http://www.kolasc.net.ru/cdo/programmes/assembler/call.html" target="_blank">call</a> и <a href="http://web.archive.org/web/20150828031025/http://www.kolasc.net.ru/cdo/programmes/assembler/ret.html" target="_blank">ret</a> на <a href="http://web.archive.org/web/20150512184626/http://www.kolasc.net.ru/cdo/programmes/assembler/tc.html" target="_blank">нашем любимом сайте</a>.
+Однако, в описании команды "<tt>ret n</tt>" там ошибка: <tt>n</tt> - это не число слов, а число байт, даже для <tt>use32</tt>!
+</li>
+<li><b>Соглашения о вызовах:</b>
+<a href="https://ru.wikipedia.org/wiki/Соглашение_о_вызове" target="_blank">Соглашение о вызове</a>
+<a href="https://en.wikipedia.org/wiki/X86_calling_conventions" target="_blank">X86 calling conventions</a> (хоть и на аглицком, но тут есть <a href="https://en.wikipedia.org/wiki/X86_calling_conventions#List_of_x86_calling_conventions" target="_blank">полезная табличка</a> внизу)
+Напомню, что мы с вами взяли только соглашения <a href="https://ru.wikipedia.org/wiki/Соглашение_о_вызове#cdecl" target="_blank">cdecl</a> (<a href="https://en.wikipedia.org/wiki/X86_calling_conventions#cdecl" target="_blank">англ.</a>) и <a href="https://ru.wikipedia.org/wiki/Соглашение_о_вызове#stdcall_.D0.B8.D0.BB.D0.B8_winapi" target="_blank">stdcall</a> (<a href="https://en.wikipedia.org/wiki/X86_calling_conventions#stdcall" target="_blank">англ.</a>), остальные можно не читать.
+
+Также приведу здесь <a href="sem2_10_cdecl_stdcall.html">пример</a> полноценной функции, организующей <b><i>stack frame</i></b> (<b><i>кадр стека</i></b>).
+</li>
+</ul>
+</div>
+<div id="comments"></div>
+<script src="comments.js"></script>
+</body>
+</html>

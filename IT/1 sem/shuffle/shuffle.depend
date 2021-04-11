@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1565550623 source:c:\users\sony\desktop\Информатика\1 семестр\shuffle\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
