@@ -1,0 +1,271 @@
+\documentclass[12pt]{article}
+
+\usepackage{mathtools}
+\usepackage{exercise}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[english, russian]{babel}
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\pagenumbering{gobble} 
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\theoremstyle{definition}
+
+\newtheorem{task}{Задача}
+\newtheorem{Lem}{Лемма}
+\newtheorem{Def}{Определение}
+\newtheorem{Th}{Теорема}
+\newtheorem{Seq}{Следствие}
+
+ 
+\newenvironment{theorem}[2][Теорема]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Задача]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+ 
+\def\eps{\varepsilon}
+\def\T{{\cal T}}
+\def\H{{\cal H}}
+\def\K{{\cal K}}
+\def\L{{\cal L}}
+\def\F{{\cal F}}
+\def\Q{{\cal Q}}
+\def\N{{\cal N}}
+\def\p{{\cal P}}
+\def\np{{\cal NP}}
+\def\A{{\cal A}}
+\def\B{{\cal B}}
+\def\D{{\cal D}}
+\def\BB{{\cal B}^* }
+\def\DD{{\cal D}^* }
+\def\TT{\tilde{\cal T}}
+\def\f{\tilde f}
+\def\ind{\mathop{\rm index}}
+\def\St{\mathop{\rm St}}
+\let\bd\partial
+\def\V{\ensuremath{{\cal V}}}
+\def\SS{{\mathbb S}}
+\def\RR{\mathbb R}
+\def\QQ{\mathbb Q}
+\def\PP{\mathbb P}
+\def\R{\cal R}
+\def\NN{\mathbb N}
+\def\CC{\mathbb C}
+\def\ZZ{\mathbb Z}
+\def\s{\sigma}
+\def\S{\Sigma }
+\def\ss{\Sigma^* }
+\def\ra{\rightarrow}
+\def\da{\downarrow}
+\def\Ra{\Rightarrow}
+\def\t{\theta}
+\def\l{\lambda}
+
+\begin{document}
+
+ 
+\title{Задание 1 по ТРЯП}
+\author{874 группа, Мельников Виктор}
+ 
+ 
+\date{} 
+\maketitle
+
+
+\begin{task} $\mathcal{A} = \{ a, ab, c \}$ и $\mathcal{B} = \{ b, ca \}$
+\textit{}
+
+\textbf{1}) $\mathcal{A}^3 = \{ aaa, aaab, aac, aaba, aabab, aabc, aca, acab, acc, abaa, abaab, abac, ababa, ababab, ababc, abca,$ $abcab, abcc, caa, caab, cac, caba, cabab, cabc, cca, ccab, ccc \}$
+
+\textbf{2}) $\mathcal{A}\mathcal{B} = \{ ab, abb, cb, aca, abca, cca  \} $
+
+\textbf{3}) $\mathcal{A}\epsilon = \mathcal{A}$
+
+\textbf{4}) $\mathcal{A} \varnothing = \varnothing$, т.к. определение конкатенации не выполняется (нельзя из пустого множества что-то взять), т.е. конкатенация непустого языка с пустым не определена.
+\end{task}
+
+
+\begin{task}
+\textit{}
+
+\textbf{1}) $\{ aa, ab \}^*$ -- это множество таких слов четной длины в бинарном алфавите $V = \{a, b\}$, что их можно разбить на какую-то комбинацию мини-слов $aa$ и $ab$.
+
+\textbf{2}) $\varnothing^* = {\varepsilon}$ просто по определению итерации и свойству объединения: $L|\varnothing = L$ для любого $L$.
+\end{task}
+
+
+
+\begin{task}
+\textit{}
+
+\textbf{1}) Сначала по индукции по длине РВ $n$ покажем, что любое РВ задает некотрый РЯ. База очевидна: $n = 1$ -- слово длины один. Это либо какая-то $\sigma \in \Sigma$, либо $\varnothing$, либо $\varepsilon$. Они соответствуют языку из одной буквы, путой язык и язык из пустого слова, соответственно, а они РЯ по опр-ю. Далее, предположим, что для всех выражений длин $n \leqslant k$ это верно. Рассмотрим РВ длины $n=k+1$. Из определения следует несколько возможностей (далее $\omega, \alpha, \beta$ -- РВ длины, не больше $k$, т.е. задающие некоторые РЯ): 
+
+$\quad\quad\quad\bullet$ $\omega = \alpha^*$ $\mapsto$ итерация РЯ, задаваемого $\alpha$;
+
+
+$\quad\quad\quad\bullet$ $\omega = \alpha\varnothing$ $\mapsto$ пустой язык (РЯ);
+
+$\quad\quad\quad\bullet$ $\omega = \alpha\varepsilon$ $\mapsto$ тот же РЯ, что и $\alpha$;
+
+$\quad\quad\quad\bullet$ $\omega = \alpha\beta$ $\mapsto$ РЯ, являющийся конкатенацией РЯ, задаваемых $\alpha$ и $\beta$;
+
+$\quad\quad\quad\bullet$ $\omega = \alpha|\beta$ $\mapsto$ РЯ, являющийся объединением РЯ, задаваемых $\alpha$ и $\beta$;
+
+$\quad\quad\quad\bullet$ $\omega = (\alpha)$ $\mapsto$ тот же РЯ, что и $\alpha$;
+
+$\quad\quad\quad\bullet$ $\omega = \alpha\sigma$ $\mapsto$ конкатенацию РЯ, задаваемого $\alpha$, с однобуквенным языком;
+
+Ясно, что были разобраны все случаи, и в каждом мы получили РВ, задающее какой-то РЯ.
+
+\textbf{2}) Теперь, индукцией по числу $n$ операций в рекрсивном опредлении РЯ, покажем, что для любого РЯ найдется РВ, задающее его. База очевидна: $n = 0$ -- ни одной операции нет, значит, по опредлению РЯ, в нем либо ничего нет, либо он состоит из одной буквы или пустого слова. Для этих случаев РВ существуют. Далее, преположим, что для всех языков, определяемых $n \leqslant k$ операциями, это верно. Пусть теперь $n=k+1$, тогда такой РЯ представим либо в виде объединения, либо в виде конкатенации, либо в виде итерации других РЯ, определяемых уже не более, чем $k$ операциями. Для любого случая РВ можно указать в явном виде соответсвующими знаками.
+
+Значит, множества языков, задаваемых РВ, и РЯ, совпадают.
+
+\end{task}
+
+
+
+\begin{task}
+\textit{}
+
+\textbf{1}) Чтобы получить $\{ a^{2k}| k \geqslant 0 \}$ в алфавите $V = \{a\}$, можно взять итерацию языка $\mathbb{L} = \{aa\}$, тогда реглярное выражение будет выглядеть так: \[(aa)^*\] 
+
+\textbf{2}) В бинарном алфавите $V = \{a,b\}$ слова без соседних одинаковых букв будут выглядеть так: сначала либо идет $a$ или $b$, затем некоторое число $ab$ (если первой была $b$), а в конце  либо ничего, либо только $a$ (если последняя $b$), следовательно, получаем РВ: \[ (b|\varepsilon)((ab)^*(a|\varepsilon)) \] 
+
+\textbf{3})
+
+\textbf{4}) $ (1|2|3|4|5|6|7|8|9)(0|1|2|3|4|5|6|7|8|9)^*
+(00|25|50|75)$ - РВ для чисел без ведущих нулей в десятичной записи, которые делятся на 25. 
+
+\textbf{5}) Заметим, что $A \bigcup\limits_{i=0}^{\infty} A^i = \bigcup\limits_{i=1}^{\infty} A^i = A^+$ по определению, поэтому РВ: $\alpha\alpha^*$
+
+\textbf{6})
+
+\end{task}
+
+
+
+\begin{task}
+\textbf{}
+
+\end{task}
+
+
+
+
+
+\begin{task}
+\textbf{}
+
+\textbf{1}) Языки слов вида $w = xabacabay$, где $x$ и $y$ -- какие-то слова в алфавите $\mathbb{\sum}^*$.
+
+\textbf{2}) Языки слов вида $w = xby$, где $x$ -- какое-то слово в унарном алфавите $V = \{a\}$ или пустое слово, а $y$ -- слово в бинарном алфавите $V_1 = \{a, b\}$ или пустое слово. 
+\end{task}
+
+
+
+\begin{task}
+\textbf{}
+
+Конечный язык можно представить в виде объединения языков, состоящих из отдельных слов. А каждое отдельное слово можно представить в виде конкатенации конечного числа языков из одной буквы, возможно и одинаковых. Но это соответствует определению РЯ (язык из одной буквы -- РЯ, их конкатенация и объединение -- тоже). Значит, ответ -- да, любой конечный язык является РЯ. 
+
+\end{task}
+
+
+
+\begin{task}
+\textit{}
+
+\textbf{1}) $\Sigma = \{a,b,c\}$,
+ $Q = \{0,1,2,3,4,5,6,7,8\}$, $q_0 = 0$, $F = \{7, 8\}$, 
+ $\delta =       \{(0, a, 1), (0, b, 4), (0, c, 8)$, $(1, b, 2), (2, b, 3), (3, c, 5),
+(4, b, 3), (4, c, 8), (5, b, 6), (6, c, 7), (8, b, 6)\}$
+
+\textbf{2}) Данный автомат принимает язык $L(A) = \{c, bc, cbc, bcbc, abbcbc, bbcbc\}$
+
+\end{task}
+
+
+\begin{task}
+\textit{}
+
+\end{task}
+
+
+
+
+\begin{task}
+\textit{}
+
+Сначала упростим РВ: $ab(ca|da)^*c(ba)^* \Leftrightarrow ab((c|d)a)^*c(ba)^*$. Это следует из аналогии дистрибутивности справа по конкатенации относительно объединения с дистрибуивнсотью справа по умножению относительно сложения. Конкатенацию можно изобразить как последовательные преходы по ребрам "в линейку". А объединение можно изобразить в виде "параллельного соединения" , т.к. смысл объединения в союзе "или". Итерацию можно заменить циклом с соответсвующими $\varepsilon$-переходами. Тогда получается следующий автомат (жирафик):
+
+\begin{center}
+\begin{tikzpicture}[scale=0.2]
+\tikzstyle{every node}+=[inner sep=0pt]
+\draw [black] (7.8,-4.2) circle (3);
+\draw (7.8,-4.2) node {$0$};
+\draw [black] (7.8,-4.2) circle (2.4);
+\draw [black] (15.6,-17.6) circle (3);
+\draw (15.6,-17.6) node {$1$};
+\draw [black] (28,-32.6) circle (3);
+\draw (28,-32.6) node {$2$};
+\draw [black] (21.8,-54.7) circle (3);
+\draw (21.8,-54.7) node {$3$};
+\draw [black] (49.4,-32.6) circle (3);
+\draw (49.4,-32.6) node {$5$};
+\draw [black] (49.4,-32.6) circle (2.4);
+\draw [black] (56.6,-54) circle (3);
+\draw (56.6,-54) node {$6$};
+\draw [black] (0.7,-4.2) -- (4.8,-4.2);
+\fill [black] (4.8,-4.2) -- (4,-3.7) -- (4,-4.7);
+\draw [black] (9.31,-6.79) -- (14.09,-15.01);
+\fill [black] (14.09,-15.01) -- (14.12,-14.06) -- (13.26,-14.57);
+\draw (11.05,-12.14) node [left] {$a$};
+\draw [black] (17.51,-19.91) -- (26.09,-30.29);
+\fill [black] (26.09,-30.29) -- (25.96,-29.35) -- (25.19,-29.99);
+\draw (21.25,-26.53) node [left] {$b$};
+\draw [black] (20.24,-52.144) arc (-154.58216:-236.76002:14.359);
+\fill [black] (20.24,-52.14) -- (20.35,-51.21) -- (19.44,-51.64);
+\draw (18.62,-41.55) node [left] {$c$};
+\draw [black] (21.702,-51.703) arc (-180.71026:-210.63192:33.379);
+\fill [black] (21.7,-51.7) -- (22.21,-50.91) -- (21.21,-50.9);
+\draw (22.17,-42.55) node [left] {$d$};
+\draw [black] (54.68,-51.697) arc (-143.3215:-179.48762:27.366);
+\fill [black] (54.68,-51.7) -- (54.6,-50.76) -- (53.8,-51.35);
+\draw (49.92,-44.79) node [left] {$b$};
+\draw [black] (29.353,-35.272) arc (21.27492:-52.6171:15.421);
+\fill [black] (29.35,-35.27) -- (29.18,-36.2) -- (30.11,-35.84);
+\draw (30.6,-45.58) node [right] {$a$};
+\draw [black] (31,-32.6) -- (46.4,-32.6);
+\fill [black] (46.4,-32.6) -- (45.6,-32.1) -- (45.6,-33.1);
+\draw (38.7,-33.1) node [below] {$c$};
+\draw [black] (52.009,-34.071) arc (54.95307:-17.76219:15.288);
+\fill [black] (52.01,-34.07) -- (52.38,-34.94) -- (52.95,-34.12);
+\draw (58.48,-41) node [right] {$a$};
+\end{tikzpicture}
+\end{center}
+
+
+\end{task}
+
+
+
+
+
+
+\end{document}

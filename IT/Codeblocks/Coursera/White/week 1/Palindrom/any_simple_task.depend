@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1587501582 source:/home/melnikov_viktor/Coursera/any_simple_task/main.cpp
+	<iostream>
+	<vector>
+	<string>
+

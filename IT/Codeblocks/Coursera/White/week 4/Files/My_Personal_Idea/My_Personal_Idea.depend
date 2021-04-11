@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1589482229 source:/home/melnikov_viktor/Coursera/White/week 4/Files/My_Personal_Idea/main.cpp
+	<iostream>
+	<fstream>
+

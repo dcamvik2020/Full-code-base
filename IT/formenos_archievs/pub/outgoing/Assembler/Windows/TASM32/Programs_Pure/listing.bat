@@ -1,1 +1,0 @@
-..\tasm32 /mx /la %1.asm

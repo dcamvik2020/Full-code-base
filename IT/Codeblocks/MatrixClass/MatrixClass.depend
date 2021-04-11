@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1591386539 source:/home/melnikov_viktor/Codeblocks/MatrixClass/main.cpp
+	<iostream>
+	<fstream>
+	<exception>
+	<cstdlib>
+	"Vector.h"
+
+1591391436 /home/melnikov_viktor/Codeblocks/MatrixClass/Vector.h
+	<iostream>
+	<sstream>
+	<string>
+	<vector>
+	<cstring>
+	<exception>
+	<stdexcept>
+

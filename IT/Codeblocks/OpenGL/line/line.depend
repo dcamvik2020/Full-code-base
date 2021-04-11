@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1584040344 source:/home/melnikov_viktor/Codeblocks/OpenGL/line/main.cpp
+	<GL/glut.h>
+
+1584037517 source:/home/melnikov_viktor/Codeblocks/OpenGL/line/field.cpp
+	"field.h"
+
+1584037517 /home/melnikov_viktor/Codeblocks/OpenGL/line/field.h
+

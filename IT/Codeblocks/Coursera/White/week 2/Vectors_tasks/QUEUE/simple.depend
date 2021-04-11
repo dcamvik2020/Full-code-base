@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1587554977 source:/home/melnikov_viktor/Coursera/simple/main.cpp
+	<iostream>
+	<string>
+	<vector>
+

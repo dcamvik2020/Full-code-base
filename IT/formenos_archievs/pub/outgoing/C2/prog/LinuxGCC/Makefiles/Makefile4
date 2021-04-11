@@ -1,8 +1,0 @@
-prog: prog.o unit.o
-	gcc $^ -o $@
-
-.c.o:
-	gcc -c $<
-
-clean:
-	rm -f *.o prog

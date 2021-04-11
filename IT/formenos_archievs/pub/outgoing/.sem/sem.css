@@ -1,7 +1,0 @@
-td /* common table item has a thin solid border */
-{
-        border: solid;
-        border-width: 1px;
-        border-color: #000000;
-        margin: 1px;
-}

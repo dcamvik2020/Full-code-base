@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1587808338 source:/home/melnikov_viktor/Coursera/NumerateTheBuses/main.cpp
+	<iostream>
+	<vector>
+	<map>
+

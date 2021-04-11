@@ -1,0 +1,12 @@
+
+/// error in old ASSERT_EQUAL:
+///     - what if we have ostringstream os already ... ?             ---> os0
+
+#define ASSERT_EQUAL(x, y) {             \
+  ostringstream my__os;                  \
+  my__os << x << " != " << #y << ", "    \
+    << __FILE__ << ":" << __LINE__;      \
+  AssertEqual(x, y, my__os.str());       \
+}
+
+

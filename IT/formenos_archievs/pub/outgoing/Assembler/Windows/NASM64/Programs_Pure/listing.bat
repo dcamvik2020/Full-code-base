@@ -1,1 +1,0 @@
-..\nasm -f win64 %1.asm -l %1.lst

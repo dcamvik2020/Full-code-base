@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1583431045 source:/home/melnikov_viktor/Codeblocks/MaxArray/main.cpp
+	<iostream>
+	<cstdlib>
+

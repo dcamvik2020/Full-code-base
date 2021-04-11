@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1588446315 source:/home/melnikov_viktor/Coursera/week 3/classes/NamesSurnames3/main.cpp
+	<iostream>
+	<algorithm>
+	<string>
+	<vector>
+	<map>
+

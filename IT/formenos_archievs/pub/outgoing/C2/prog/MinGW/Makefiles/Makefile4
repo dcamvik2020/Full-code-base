@@ -1,8 +1,0 @@
-prog.exe: prog.o unit.o
-	gcc $^ -o $@
-
-.c.o:
-	gcc -c $<
-
-clean:
-	del *.o *.exe

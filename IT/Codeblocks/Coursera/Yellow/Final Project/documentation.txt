@@ -1,0 +1,47 @@
+/// Final Task Number 1
+/// Task: to make a data base that interacts with
+/// user through stdin-stdout.
+
+/// DataBase : pairs (date, event)
+/// date     : year-month-day (integers)
+/// event    : not empty string without ' ';'\n';etc.
+
+/// POSSIBLE : 1 date ---> several DIFFERENT events
+/// same events --> don't save
+
+/// COMMANDS:
+/// Add Date Event
+/// Del Date Event
+/// Del Date         -- ALL events for ONE date
+/// Find Дата        -- ALL events for ONE date
+/// Print            -- ALL events for ALL dates
+
+/// GARANTED:
+/// 1 cmd - 1 line (ignore empty strings)
+/// ALL cmds are correct (look earlier)
+/// ALL dates, events are not empty strings
+/// ALL dates with negative years or ... will be deleted
+///              so, they won't be printed
+/// days in month : all consist of 31 days
+/// year -- it can be negative, 0, positive
+
+/// INPUT ERRORS:
+/// unknown cmd --> print "Unknown command: cmd"
+/// letters before or after date -- error
+/// date format: "Wrong date format: DATE"
+///              DATE -- was written by user
+///              DATE: parts != "", but can be zero or even negative
+/// if format is correct --> check month
+///              month in [1, 12], else "Month value is invalid: MONTH"
+/// if month is correct --> check day
+///              day in [1, 31], else "Day value is invalid: DAY"
+
+/// errors are in day && month --< only 1 message about error in month
+///       1-1-1    correct
+///      -1-1-1    correct
+///      1--1-1    correct fromat, but incorrect   month=-1
+///     1---1-1    incorrect fromat: month with "--" before number
+///     1<200b>-+1-+1    correct date
+
+/// error --> print message --> exit(0) (STOP)
+

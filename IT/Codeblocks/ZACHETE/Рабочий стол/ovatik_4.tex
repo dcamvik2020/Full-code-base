@@ -1,0 +1,230 @@
+\documentclass[12pt]{article}
+
+\usepackage{mathtools}
+\usepackage{exercise}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[english, russian]{babel}
+\usepackage{hyperref}
+
+\pagenumbering{gobble} 
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\theoremstyle{definition}
+
+\newtheorem{task}{Задача}
+\newtheorem{Lem}{Лемма}
+\newtheorem{Def}{Определение}
+\newtheorem{Th}{Теорема}
+\newtheorem{Seq}{Следствие}
+
+ 
+\newenvironment{theorem}[2][Теорема]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Задача]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+ 
+\def\eps{\varepsilon}
+\def\T{{\cal T}}
+\def\H{{\cal H}}
+\def\K{{\cal K}}
+\def\L{{\cal L}}
+\def\F{{\cal F}}
+\def\Q{{\cal Q}}
+\def\N{{\cal N}}
+\def\p{{\cal P}}
+\def\np{{\cal NP}}
+\def\A{{\cal A}}
+\def\B{{\cal B}}
+\def\D{{\cal D}}
+\def\BB{{\cal B}^* }
+\def\DD{{\cal D}^* }
+\def\TT{\tilde{\cal T}}
+\def\f{\tilde f}
+\def\ind{\mathop{\rm index}}
+\def\St{\mathop{\rm St}}
+\let\bd\partial
+\def\V{\ensuremath{{\cal V}}}
+\def\SS{{\mathbb S}}
+\def\RR{\mathbb R}
+\def\QQ{\mathbb Q}
+\def\PP{\mathbb P}
+\def\R{\cal R}
+\def\NN{\mathbb N}
+\def\CC{\mathbb C}
+\def\ZZ{\mathbb Z}
+\def\s{\sigma}
+\def\S{\Sigma }
+\def\ss{\Sigma^* }
+\def\ra{\rightarrow}
+\def\da{\downarrow}
+\def\Ra{\Rightarrow}
+\def\t{\theta}
+\def\l{\lambda}
+
+\begin{document}
+
+ 
+\title{Задание 9 по ОВАиТК}
+\author{874 группа, Мельников Виктор}
+ 
+ 
+\date{} 
+\maketitle
+
+
+\begin{task} 
+\textit{}
+
+\textit{a}) Система сравнений:
+	\begin{equation*}
+		\begin{cases}
+   		n \equiv 7 $ $mod$ $ 9 \\
+   		n \equiv 3 $ $mod $ $4 \\
+   		n \equiv 16 $ $mod $ $17
+ 		\end{cases}
+	\end{equation*}
+$$n=4k+3,k\in \ZZ \Rightarrow 4k+3-7=4(k-1) \vdots 9 \Rightarrow$$
+$$k=9l+1,l\in \ZZ \Rightarrow 4(9l+1)+3-16=36l-9=9(4l-1)\vdots 17 \Rightarrow$$
+$$ l=17m+13,m\in \ZZ \Rightarrow n=4(9(17m+13)+1)+3=612m+475  $$
+
+\textit{b})  Система сравнений:
+	\begin{equation*}
+		\begin{cases}
+   		n \equiv 35 $ $mod$ $ 49 \\
+   		n \equiv 27 $ $mod $ $ 50 \\
+   		n \equiv 49 $ $mod $ $ 56
+ 		\end{cases}
+ 		\Leftrightarrow
+ 		\begin{cases}
+   		n \equiv 35 $ $mod $ $ 49 \\
+   		n \equiv 1 $ $mod $ $ 2 \\
+   		n \equiv 2 $ $mod $ $ 25 \\
+   		n \equiv 1 $ $mod $ $ 8
+ 		\end{cases}
+ 		\Leftrightarrow
+ 		\begin{cases}
+   		n \equiv 35 $ $mod $ $ 49 \\
+   		n \equiv 2 $ $mod $ $ 25 \\
+   		n \equiv 1 $ $mod $ $ 8
+ 		\end{cases}
+	\end{equation*}
+Значит, $n=49k+35, k \in \ZZ, \Rightarrow 49k+35-2\equiv 0$ mod $25$, т.е. $-k\equiv-8 \Leftrightarrow k\equiv 8$ mod $25$, т.е. $k=25l+8, l\in \ZZ$, поэтому $n=49(25l+8)+35\equiv l+3\equiv 1$ mod $8, \Rightarrow$ $l\equiv -2 \equiv 6$ mod $8$. Значит, $l=8m+6, m\in \ZZ, \Rightarrow n=49(25(8m+6)+8)+35=9800m+7777$.
+
+\end{task}
+
+
+
+
+\begin{task} 
+\textit{}
+
+\textit{} Сначала заметим, что $77=7*11$, и что если $x^6+y^10=1$ в кольце $\ZZ/(77)$, то $x^6+y^10\equiv 1$ mod $77, \Rightarrow x^6+y^10\equiv 1$ mod $7, x^6+y^10\equiv 1$ mod $11$. Получили два сравнения по простым модулям. Теперь заметим, что $\forall x, y\in \NN \hookrightarrow (x^6\equiv 1$ mod $7$ или $x^6\equiv 0$ mod $7)$, ($y^10\equiv 1$ mod $11$ или $y^10\equiv 0$ mod $11)$. 
+
+\textit{} Разберем первое сравнение (по модулю $7$): если $x^6\equiv 1$ mod $7$, то $y^10\equiv 0$ mod $7)$, т.е. $x$ не делится на $7$, а $y$ делится на $7$. От $0$ до $6$ подходят 6 пар (понятно, какие). Если $x^6\equiv 0$ mod $7$, то $y^10\equiv 1$ mod $7 \Leftrightarrow y^12\equiv y^2\equiv 1$ mod $7)$, т.е. $x$ делится на $7$, а $y\equiv \pm 1$ mod $7$. От $0$ до $6$ подходят 2 пары.
+
+\textit{} Теперь обратимся ко 2 сравнению (по модулю $11$). Аналогично два случая. Если $y^10\equiv 0$ mod $11$, то $x^6\equiv 1$ mod $11, \Rightarrow y^12\equiv y^2\equiv 1$ mod $11)$, т.е. $y$ делится на $11$, а $x\equiv \pm 1$ mod $11$. От $0$ до $10$ подходят 2 пары. Если $y^10\equiv 1$ mod $11$, то $x^6\equiv 0$ mod $11, \Rightarrow$ $y$ не делится на $11$, а $x\equiv \pm 1$ mod $11$. От $0$ до $10$ подходят 10 пар чисел.
+
+\textit{} По китайской теореме об остатках получается, что всего решений $8*12=96$, т.к. $(7, 11) = 1$.
+
+\end{task}
+
+
+
+
+
+
+
+
+\begin{task} 
+\textit{}
+
+\textit{a}) Существует. Пример: $-x^3$. $x*(-x^3)=-(x^4+1)+1=1$.
+
+\textit{b}) $$x^3 f(x)=x+1$$ $$x(x^2f(x)-1)=1$$ $$x^2f(x)-1=-x^3\text{, т.к. } x*(-x^3)=1$$ $$x^2(f(x)+x)=1$$ $$f(x)+x=-x^2\text{, т.к. } x^2*(-x^2)=1.$$ Значит, $f(x)=-x^2-x$ подходит.
+
+\end{task}
+
+
+
+
+
+
+
+
+
+\begin{task} 
+\textit{}
+
+\textit{a}) Нет. Если многочлен приводим, то его можно представить в виде $(x-a)(x-b)$, причем $a,b$ не обязательно числа от $0$ до $37$. Главное, чтобы выполнялась система сравнений: 
+	\begin{equation*}
+		\begin{cases}
+   		a+b \equiv 3 $ $mod $ $ 37\\
+   		a b \equiv 11 $ $mod $ $ 37
+ 		\end{cases}
+	\end{equation*}
+Тогда получится, что $b \equiv 3-a$ mod $37,\Rightarrow ab \equiv 3a-a^2 \equiv 11$ mod $37$. Отсюда, что $a^2-3a+11\equiv a^2-40a+400-389=(a-20)^2-389\equiv c^2-19\equiv 0$ mod $37$, где $c=a-20$. Нужно понять, имеет ли решение это сравнение. Т.е. НУжно узнать, является ли $19$ квадратичным вычетом по модулю 37. Символ Лежандра: 
+$$\left(^{19}_{37}\right) = (-1)^{\frac{19-1}{2} \frac{37-1}{2}} \left(^{37}_{19}\right)$$ 
+ 
+
+\textit{b}) Да. Допустив, что $x^4+1=(x^2+ax+b)(x^2+cx+d)=x^4+(a+c)x^3+(b+ac+d)x^2+(bc+ad)x+bd$, получим систему сравнений:
+	\begin{equation*}
+		\begin{cases}
+   		a+c \equiv 0 $ $mod$ $ 11 \\
+   		b+ac+d \equiv 0 $ $mod $ $ 11 \\
+   		bc+ad \equiv 0 $ $mod $ $ 11 \\
+   		bd \equiv 1 $ $mod $ $ 11
+ 		\end{cases}
+	\end{equation*}
+Тогда $c \equiv -a, \Rightarrow d\equiv a^2-b$. Также $a(d-b)\equiv a(a^2-2b)\equiv 0$ mod $11$. Если $a\equiv 0$ mod $11$, то $c\equiv 0$ mod $11$, $d\equiv -b$, $bd\equiv -b^2\equiv 1$. Т.е. $b^2\equiv -1\equiv 10$ mod $11$. А это сравнение не имеет решений. В случае $a^2\equiv 2b$ получаем, что $d\equiv b, \Rightarrow bd\equiv b^2\equiv 1$ означает, что либо $b\equiv 1$ mod $11$(и тогда $a^2\equiv 2$ mod $11$, а это сравнение не имеет решений), либо $b\equiv -1$, и тогда $a^2\equiv -2 \equiv 9$. Если взять $a\equiv 3$ mod $11$, то мы получиv искомое разложение: $a_0=3, b_0=-1, c_0=-3, d_0=-1$. Проверим: $(x^2+3x-1)(x^2-3x-1)=x^4+3x^3-x^2-3x^3-9x^2+3x-x^2-3x+1=x^4-11x^2+1\equiv x^4+1$.
+
+\textit{с}) Да. $x^6+1=(x^2+1)(x^4-x^2+1)$ 
+
+\end{task}
+
+
+\begin{task}
+\textit{}
+
+\textit{a}) Поле $F$ по сложению --- всегда абелева группа, поэтому $\forall a\in F \exists -a\in F: a+(-a)=0$. Все элементы разбиваются на пары, сумма в каждой паре равна нулю. Значит, сумма всех элементов поля равна нулю.  
+
+\textit{b})
+
+\end{task}
+
+
+
+
+
+
+
+
+
+\begin{task}
+\textit{}
+
+\textit{a}) $343=7^3$, поэтому надо построить $\mathbb{F}_{7^3}$. А построить его можно как фактор-кольцо $\mathbb{F}_7[x]/(P_3(x))$, где $P_3(x)$ --- неприводимый многочлен 3 степени над $\mathbb{F}_7[x]$, например $x^3+x+1$.
+
+\textit{b})
+
+\end{task}
+
+
+
+
+
+
+\end{document}

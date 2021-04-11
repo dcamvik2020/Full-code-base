@@ -1,0 +1,6 @@
+example : unit.o example.o
+	g++ $^ -o $@
+%.o : %.cpp unit.h
+	g++ -Wall -Wextra -Werror -c $<
+clean :
+	rm -f *.o example

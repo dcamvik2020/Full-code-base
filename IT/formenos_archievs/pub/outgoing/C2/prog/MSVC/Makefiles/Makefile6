@@ -1,8 +1,0 @@
-CFLAGS=/nologo
-LFLAGS=/nologo
-
-prog.exe: prog.obj unit.obj
-	link $(LFLAGS) /out:$@ $**
-
-clean:
-	del *.obj *.exe

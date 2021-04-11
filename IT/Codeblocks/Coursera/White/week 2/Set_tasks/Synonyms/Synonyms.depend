@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1587823016 source:/home/melnikov_viktor/Coursera/Set_tasks/Synonyms/main.cpp
+	<iostream>
+	<vector>
+	<map>
+	<set>
+	<algorithm>
+
