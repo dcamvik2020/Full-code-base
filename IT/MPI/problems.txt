@@ -1,0 +1,4 @@
+hostfile : localhost slots=N
+then : mpirun --hostfile hostfile -np 20 ./prog ...
+
+mpicc prog.c -lm -o prog // for <math.h>
