@@ -1,0 +1,4 @@
+dt = 0.000001
+time_parts = 1633333
+Proccesses : 28
+That took 228.786508 seconds.

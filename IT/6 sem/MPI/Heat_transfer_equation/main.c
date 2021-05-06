@@ -44,7 +44,8 @@
 int main(int argc, char ** argv) {
 	
   // # of parts of [0, l]
-  const unsigned N = atoi(argv[1]); 
+  const unsigned N = atoi(argv[1]); // maybe it should be not 700 ... but 10^6 at least
+                                    // else : time(messages sends) >> computing time
   // integrating time
   const double T = atof(argv[2]); 
   const double a = 0.0, b = 1.0, len = 1.0; //, c = 1.0;
@@ -84,7 +85,7 @@ int main(int argc, char ** argv) {
   printf("sdfsjdnlgjbsndlgjbsljbgljsb\n");
   printf("rank = %u\n", rank);
  */ if (rank == 0) {
-    printf("dt = %lf\n", dt);
+    printf("dt = %.15lf\n", dt);
     printf("time_parts = %u\n", time_parts);
   }
 
