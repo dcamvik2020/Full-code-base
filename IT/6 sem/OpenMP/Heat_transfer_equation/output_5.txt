@@ -1,4 +1,0 @@
-dt = 0.000001
-time_parts = 1633333
-Proccesses : 22
-That took 370.775732 seconds.

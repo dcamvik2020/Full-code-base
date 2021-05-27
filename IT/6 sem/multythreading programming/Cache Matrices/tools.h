@@ -1,27 +1,26 @@
+#pragma once
+
 #include <iostream>
-#include <ctime>
-#include <iomanip>
+#include <chrono>
+
+void Usage();
 
 class Timer {
-public :
-  Timer() : workTime(clock()) {};
-  ~Timer() {
-    workTime = clock() - workTime;
-    workTime = (double) workTime / CLOCKS_PER_SEC;
-    std::cout << "Time of program's work = ";
-    /// << std::fixed << std::setprecision(15) << workTime << "\n";
-    printf("%lf\n", workTime);
-  }
-private :
-  double workTime;
-};
+private:
+  using clock_t = std::chrono::high_resolution_clock;
+  using second_t = std::chrono::duration<double, std::ratio<1> >;
 
-void Usage () {
-  std::cout
-    << "Usage :\n"
-    << "\t./main N mod proc\n"
-    << "\tN = matrix size\n"
-    << "\tmod = max element value + 1.\n"
-    << "\tproc = number of processes";
-}
+  std::chrono::time_point<clock_t> m_beg;
+
+public:
+  Timer() : m_beg(clock_t::now()) {}
+
+  void reset() {
+    m_beg = clock_t::now();
+  }
+
+  double elapsed() const {
+    return std::chrono::duration_cast<second_t>(clock_t::now() - m_beg).count();
+  }
+};
 
