@@ -12,8 +12,8 @@
 #include "tools.h"
 
 
-#define BLOCK_W 4
-#define BLOCK_H 4
+#define BLOCK_W 16
+#define BLOCK_H 16
 
 
 /// sizes will be good : they will be divided in blocks without rest
@@ -24,7 +24,7 @@ private:
   std::vector<std::vector<int>> matr;
   
 public:
-  Matrix(const std::string & _name, unsigned _h= 0, unsigned _w = 0, bool random_fill = true);
+  Matrix(const std::string & _name, unsigned _h = 0, unsigned _w = 0, bool random_fill = true);
   Matrix(const Matrix & other); 
 
   const std::string & getName() const {return name;}

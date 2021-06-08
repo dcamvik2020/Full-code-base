@@ -1,0 +1,13 @@
+Size of matrices :  1024
+threads       threads, s        usual, s        speedup
+1             6.036500          11.330338        1.87697       RESULT is correct
+2             2.023334          11.484076        5.67582       RESULT is correct
+3             1.426287          11.412795        8.00175       RESULT is correct
+4             1.040937          11.302375        10.8579       RESULT is correct
+5             1.283982          11.538449        8.98646       RESULT is correct
+6             1.104664          11.386314        10.3075       RESULT is correct
+7             0.880987          11.355530        12.8895       RESULT is correct
+8             0.896951          11.418151        12.73       RESULT is correct
+9             0.858943          11.172639        13.0074       RESULT is correct
+10             0.943490          11.334116        12.013       RESULT is correct
+11             1.125980          11.197012        9.94424       RESULT is correct

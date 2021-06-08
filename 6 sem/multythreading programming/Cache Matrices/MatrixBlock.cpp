@@ -26,7 +26,7 @@ Matrix::MatrixBlock::MatrixBlock(const Matrix::MatrixBlock & other) : matr_name(
 }
 
 
-Matrix::MatrixBlock::MatrixBlock(const int (& some_data) [4][4], const std::string & _matr_name) : matr_name(_matr_name) {
+Matrix::MatrixBlock::MatrixBlock(const int (& some_data) [BLOCK_H][BLOCK_W], const std::string & _matr_name) : matr_name(_matr_name) {
   for (unsigned i = 0; i < BLOCK_H; ++i) {
     for (unsigned j = 0; j < BLOCK_W; ++j) {
       block[i][j] = some_data[i][j];
