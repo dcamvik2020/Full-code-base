@@ -38,32 +38,28 @@ int main() {
 std::string sum(const std::string & a, const std::string & b) {
   int rest = 0;
   std::string res(std::max(a.size(), b.size()) + 1, 0);
+  
   for (size_t k = 0; k < res.size(); ++k) {
-    //std::cout << k << ":    1st : " << a[a.size() - 1 - k] 
-      //	 << "   2nd : " << b[b.size() - 1 - k] << "    ";
-	  
+	unsigned res_pos = res.size() - 1 - k;
+    unsigned a_pos = a.size() - 1 - k;
+    unsigned b_pos = b.size() - 1 - k;
     if (k >= a.size() && k >= b.size()) {
-      res[res.size() - 1 - k] = rest + '0';
+      res[res_pos] = rest + '0';
       rest = 0;
     } else if (k >= a.size()) {
-      res[res.size() - 1 - k] = (b[b.size() - 1 - k] - '0' + rest) % 10 + '0';
-      rest = (b[b.size() - 1 - k] - '0' + rest) / 10;
+      res[res_pos] = (b[b_pos] - '0' + rest) % 10 + '0';
+      rest = (b[b_pos] - '0' + rest) / 10;
     } else if (k >= b.size()) {
-      res[res.size() - 1 - k] = (a[a.size() - 1 - k] - '0' + rest) % 10 + '0';
-      rest = (a[a.size() - 1 - k] - '0' + rest) / 10;
+      res[res_pos] = (a[a_pos] - '0' + rest) % 10 + '0';
+      rest = (a[a_pos] - '0' + rest) / 10;
     } else {
-      res[res.size() - 1 - k] = (a[a.size() - 1 - k] - '0' + 
-                b[b.size() - 1 - k] - '0' + rest) % 10 + '0';
-      rest = (a[a.size() - 1 - k] - '0' + 
-                b[b.size() - 1 - k] - '0' + rest) / 10;
+      res[res_pos] = (a[a_pos]-'0' + b[b_pos]-'0' + rest) % 10 + '0';
+      rest = (a[a_pos] - '0' + b[b_pos] - '0' + rest) / 10;
     }
-    //std::cout << "res : " << res[res.size() - 1 - k] 
-	// << "      rest : " << rest << std::endl;
   }
-  if (res[0] == '0' && res.size() > 1) res.erase(res.begin());
   
-  //while (res[res.size() - 1] == '0') res.pop_back();
-  //Reverse(res);
+  if (res[0] == '0' && res.size() > 1) 
+    res.erase(res.begin());
   return res;
 }
 
