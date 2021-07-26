@@ -1,0 +1,1 @@
+g++ -Wall -Wextra -Werror -g main.cpp field.cpp -lGL -lGLU -lglut -o exe
