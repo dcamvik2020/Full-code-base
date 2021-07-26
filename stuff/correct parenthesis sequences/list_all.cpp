@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-void foo(std::string stack, unsigned open, unsigned close, unsigned n);
+void foo(std::string & stack, unsigned open, unsigned close, unsigned n);
 
 int main ()
 {
@@ -16,8 +16,8 @@ int main ()
   return 0;
 }
 
-
-void foo(std::string stack, unsigned open, unsigned close, unsigned n)
+/// reference to stack ---> time decrease from 34ms to 12ms (3 times faster)
+void foo(std::string & stack, unsigned open, unsigned close, unsigned n)
 {
   if (stack.size() == 2 * n)
   {

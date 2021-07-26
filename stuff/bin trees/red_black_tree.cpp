@@ -1,6 +1,6 @@
 #include<iostream>
 
-enum class Color {  // TODO TODO TODO : check enum-theory
+enum class Color {
   RED = 0,
   BLACK = 1;
 };
@@ -22,15 +22,18 @@ private:
   } Node;
 
   Node * head;
+  unsigned black_height;
 
-  void balance()
+  void balance ();
+  void count_black_height ();
 
 public:
-  RBTree() {}
+  RBTree() : head(nullptr), black_height(0) {}
 
-  insert
-  delete
-  print
+  void insert (int x);
+  void delete (int x);
+  void print () const;
+  unsigned getBlackHeight () const {return black_height;}
 
   ~RBTree() {delete head;}
 }

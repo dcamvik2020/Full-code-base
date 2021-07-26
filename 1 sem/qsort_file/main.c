@@ -17,7 +17,9 @@ int main(void)
         if ((output = fopen("output.txt", "wt")) != NULL)
         {
             ///create an array of pointers and read words
-            fscanf(input, "%u", &N);
+            fscanf(input, "%u", &N);               /// fscanf doesn't read '\n'
+			if (!fgets(buf, sizeof buf, input))    /// --> need fgets for it
+				buf[0] = '\0';                     /// it's a trash, for '\n' only
             s = (char**) malloc(N*sizeof(char*));
             for (i = 0; i < N; i++)
             {
