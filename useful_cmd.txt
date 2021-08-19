@@ -2,3 +2,6 @@ find . -type f -name "*seq*" -print
 wc -l file_1.txt file_2.cpp file_3.c --> count lines in files
 find  . -maxdepth 3 -name "*.py" -print | xargs wc -l
 
+
+Java : 
+update-alternatives --config java   /// can choose 8, 11 versions of JDK
