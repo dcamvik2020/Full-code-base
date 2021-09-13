@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1544275881 source:c:\users\sony\desktop\Информатика\random_sort\main.c
-	<stdio.h>
-	<stdlib.h>
-	<time.h>
-
