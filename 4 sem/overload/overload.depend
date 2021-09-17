@@ -1,5 +1,0 @@
-# depslib dependency file v1.0
-1586355431 source:/home/melnikov_viktor/Codeblocks/overload/main.cpp
-	<iostream>
-	<time.h>
-
