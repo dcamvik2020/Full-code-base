@@ -1,6 +1,7 @@
 find . -type f -name "*seq*" -print
 wc -l file_1.txt file_2.cpp file_3.c --> count lines in files
 find  . -maxdepth 3 -name "*.py" -print | xargs wc -l
+du -sh *  ---> used memory for all subdirectories in cur dir
 
 
 Java : 
