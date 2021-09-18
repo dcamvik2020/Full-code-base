@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1588471121 source:/home/melnikov_viktor/Coursera/week 4/Files/FilesReadWrite/main.cpp
-	<iostream>
-	<fstream>
-
-1588471471 source:/home/melnikov_viktor/Coursera/White/week 4/Files/FilesReadWrite/main.cpp
-	<iostream>
-	<fstream>
-

@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1588472696 source:/home/melnikov_viktor/Coursera/week 4/Files/PrecisionOutput/main.cpp
-	<iostream>
-	<fstream>
-	<vector>
-	<iomanip>
-

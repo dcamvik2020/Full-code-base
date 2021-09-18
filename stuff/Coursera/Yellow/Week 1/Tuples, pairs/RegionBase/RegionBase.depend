@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1589037037 source:/home/melnikov_viktor/Coursera/Yellow/Week 1/Tuples, pairs/RegionBase/main.cpp
-	<algorithm>
-	<iostream>
-	<vector>
-	<tuple>
-	<map>
-

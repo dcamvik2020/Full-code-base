@@ -1,5 +1,0 @@
-# depslib dependency file v1.0
-1584051404 source:/home/melnikov_viktor/Codeblocks/OpenGL/demo/main.cpp
-	<stdio.h>
-	<GL/glut.h>
-

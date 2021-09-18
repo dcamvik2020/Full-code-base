@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1587830286 source:/home/melnikov_viktor/Coursera/week 3/algo/abs_sort/main.cpp
-	<iostream>
-	<algorithm>
-	<vector>
-

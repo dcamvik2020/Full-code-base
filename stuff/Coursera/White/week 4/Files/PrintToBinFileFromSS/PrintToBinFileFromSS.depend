@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1589625270 source:/home/melnikov_viktor/Coursera/White/week 4/Files/PrintToBinFileFromSS/main.cpp
-	<iostream>
-	<sstream>
-	<fstream>
-	<vector>
-	<string>
-

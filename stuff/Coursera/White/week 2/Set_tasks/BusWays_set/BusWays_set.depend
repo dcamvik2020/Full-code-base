@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1587826868 source:/home/melnikov_viktor/Coursera/Set_tasks/BusWays_set/main.cpp
-	<algorithm>
-	<iostream>
-	<vector>
-	<set>
-
